@@ -24,10 +24,12 @@ public class RegistrationTest extends BaseTest {
     @BeforeClass
     public void setupDriver(@Optional("chrome") String browser) {
         switch (browser.toLowerCase()) {
+
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
+
             case "chrome":
             default:
                 WebDriverManager.chromedriver().setup();
@@ -38,9 +40,8 @@ public class RegistrationTest extends BaseTest {
                 driver = new ChromeDriver(options);
                 break;
         }
-        TestListener.setDriver(driver);
+        setDriver(driver);
         form = new RegistrationPage(driver);
-        driver.manage().window().maximize();
     }
 
 

@@ -6,6 +6,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import data.Constants;
 import org.apache.commons.io.FileUtils;
 import org.demo.Utilities;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -18,6 +19,12 @@ public class BaseTest {
     protected static ExtentReports extent;
     protected static ExtentTest test;
     protected static Constants constants;
+
+    public static WebDriver driver;
+
+    public static void setDriver(WebDriver driverInstance) {
+        driver = driverInstance;
+    }
 
 
     @BeforeSuite

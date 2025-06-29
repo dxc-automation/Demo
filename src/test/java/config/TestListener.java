@@ -14,17 +14,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-import static config.BaseTest.test;
+import static config.BaseTest.*;
 
 
 public class TestListener implements ITestListener {
 
-
-    private static WebDriver driver;
-
-    public static void setDriver(WebDriver driverInstance) {
-        driver = driverInstance;
-    }
 
     @Override
     public void onTestFailure(ITestResult result) {

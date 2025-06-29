@@ -1,17 +1,26 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="API Test Suite">
+
+
+    <listeners>
+        <listener class-name="config.TestListener"/>
+    </listeners>
+
     <test name="User API Tests">
+
         <classes>
             <class name="tests.CreateUserTest">
                 <methods>
                     <include name="testCreateUser"/>
                 </methods>
             </class>
+
             <class name="tests.RegistrationTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
                 </methods>
             </class>
         </classes>
+
     </test>
 </suite>
