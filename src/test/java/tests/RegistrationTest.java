@@ -68,14 +68,23 @@ public class RegistrationTest extends BaseTest {
 
         Assert.assertTrue(form.isConfirmationModalDisplayed(), "Modal should be displayed");
 
-        Assert.assertTrue(form.modalContainsText("Ivan"));
-        Assert.assertTrue(form.modalContainsText("Petrov"));
-        Assert.assertTrue(form.modalContainsText("ivan.petrov@example.com"));
-        Assert.assertTrue(form.modalContainsText("Male"));
-        Assert.assertTrue(form.modalContainsText("0888123456"));
-        Assert.assertTrue(form.modalContainsText("Maths"));
-        Assert.assertTrue(form.modalContainsText("Sports"));
-        Assert.assertTrue(form.modalContainsText("123 Test Street"));
+        Assert.assertTrue(form.modalContainsText(constants.getFirstName()));
+        Assert.assertTrue(form.modalContainsText(constants.getLastName()));
+        Assert.assertTrue(form.modalContainsText(constants.getEmail()));
+        Assert.assertTrue(form.modalContainsText(constants.getGender()));
+        Assert.assertTrue(form.modalContainsText(constants.getMobile()));
+        Assert.assertTrue(form.modalContainsText(constants.getFirstHobby()));
+        Assert.assertTrue(form.modalContainsText(constants.getSecondHobby()));
+        Assert.assertTrue(form.modalContainsText(constants.getAddress()));
+
+        test.pass("<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"
+                + "<a href='data.xlsx'>Test Data</a></br></br>"
+                + "<center><b>Test Case</center></b></br></br>"
+                + "1. Open https://demoqa.com/automation-practice-form</br>"
+                + "2. Enter all mandatory details</br>"
+                + "3. Submit form</br>"
+                + "4. Wait for modal dialog to be displayed and verify that all data was successfully submitted"
+                + "</pre>");
 
         form.closeModal();
     }

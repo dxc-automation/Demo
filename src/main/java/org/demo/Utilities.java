@@ -1,5 +1,9 @@
 package org.demo;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +15,16 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Utilities {
+
+
+    public static String getFormattedJson(JsonObject object) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        // Pretty print на JSON
+        String prettyJson = gson.toJson(object);
+        return prettyJson;
+    }
+
 
     public static String getDate() {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

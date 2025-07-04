@@ -16,7 +16,7 @@ public class Excel {
 
     public static Object readFromExcel(String sheetName, int rowNo, int colNo) throws IOException, ParseException {
         //Create an object of File class to open Excel file
-        File file = new File("src/test/java/data/data.xlsx");
+        File file = new File("test-output/data.xlsx");
 
         //Create an object of FileInputStream class to read an Excel file
         FileInputStream inputStream = new FileInputStream(file);
