@@ -9,17 +9,22 @@
     <test name="User API Tests">
 
         <classes>
-            <class name="tests.CreateUserTest">
+
+            <class name="tests.api.BookTests">
                 <methods>
-                    <include name="testCreateUser"/>
+                    <include name="listAllBooks"/>
+                    <include name="addNewBook"/>
+                    <include name="updateBook"/>
+                    <include name="deleteBook"/>
                 </methods>
             </class>
 
-            <class name="tests.RegistrationTest">
+            <class name="tests.web.RegistrationTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
                 </methods>
             </class>
+
         </classes>
 
     </test>

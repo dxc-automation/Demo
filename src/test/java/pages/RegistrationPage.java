@@ -34,7 +34,6 @@ public class RegistrationPage {
 
     public void openFormPage() {
         driver.get("https://demoqa.com/automation-practice-form");
-        driver.manage().window().maximize();
         js.executeScript("document.getElementById('fixedban').style.display='none'");
         js.executeScript("document.querySelector('footer').style.display='none'");
     }

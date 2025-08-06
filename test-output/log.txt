@@ -1,0 +1,8 @@
+'src' is not recognized as an internal or external command,
+operable program or batch file.
+The process finish with code: 1
+The system cannot find the path specified.
+The process finish with code: 1
+'LibraryManager.exe' is not recognized as an internal or external command,
+operable program or batch file.
+The process finish with code: 1

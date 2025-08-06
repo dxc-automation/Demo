@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,6 +15,32 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Utilities {
+
+
+
+    public static void runExe() throws IOException, InterruptedException {
+        String root = System.getProperty("user.dir");
+        String path = root + File.separator + "library-manager" + File.separator + "LibraryManager.exe";
+
+        Process process;
+
+        ProcessBuilder builder = new ProcessBuilder(path);
+        builder.directory(new File(root + File.separator + "Resources"));
+        builder.redirectErrorStream(true);
+        process = builder.start();
+
+        // Четене на изхода
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println("Output: " + line);
+        }
+
+        // Изчаква процеса да приключи и взема кода за завършване
+        int exitCode = process.waitFor();
+        System.out.println("Процесът завърши с код: " + exitCode);
+    }
 
 
     public static String getFormattedJson(JsonObject object) {
