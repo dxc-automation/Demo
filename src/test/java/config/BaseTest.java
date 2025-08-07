@@ -32,6 +32,7 @@ public abstract class BaseTest {
 
     @BeforeSuite
     public void setupReport() throws IOException, ParseException, InterruptedException {
+        System.setProperty("java.awt.headless", "false");
         desktop = Desktop.getDesktop();
         desktop.open(new File(path));
 
