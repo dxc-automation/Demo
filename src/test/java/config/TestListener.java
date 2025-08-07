@@ -86,7 +86,7 @@ public class TestListener implements ITestListener {
 
         sparkReporter.config().setDocumentTitle("Automation Test Report"); // Title of report
         sparkReporter.config().setReportName("Report"); // name of the report
-        sparkReporter.config().setTheme(Theme.DARK);
+        sparkReporter.config().setTheme(Theme.STANDARD);
 
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
