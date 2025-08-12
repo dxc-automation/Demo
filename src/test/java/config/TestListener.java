@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Protocol;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.demo.ScreenshotUtil;
 import org.openqa.selenium.OutputType;
@@ -46,6 +47,7 @@ public class TestListener implements ITestListener {
     private static String requestLog;
     private static String testCategory;
     public  static String testPassDetails;
+    public  static String screenshot;
 
 
     public static void setRequestLog(String newRequestLog) {
@@ -79,14 +81,16 @@ public class TestListener implements ITestListener {
     @Override
     public void onStart(ITestContext testContext)
     {
-        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());//time stamp
-        String reportName="Test_Report.html";
+        String reportName="Automation_Report.html";
 
         sparkReporter=new ExtentSparkReporter("./test-output/" + reportName);//specify location of the report
 
-        sparkReporter.config().setDocumentTitle("Automation Test Report"); // Title of report
-        sparkReporter.config().setReportName("Report"); // name of the report
+        sparkReporter.config().setDocumentTitle("Automation Report"); // Title of report
+        sparkReporter.config().setReportName("Automation Report"); // name of the report
         sparkReporter.config().setTheme(Theme.STANDARD);
+        sparkReporter.config().enableTimeline(true);
+        sparkReporter.config().setEncoding("utf-8");
+        sparkReporter.config().setProtocol(Protocol.HTTPS);
 
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
@@ -96,23 +100,29 @@ public class TestListener implements ITestListener {
     }
 
     public void onTestSuccess(ITestResult result) {
-        test = extent.createTest(testName);
-        test.assignCategory(result.getMethod().getGroups());
         testCategory = result.getMethod().getDescription();
+
+        test = extent.createTest(testName);
+        test.assignCategory(testCategory);
 
         if (testCategory.equalsIgnoreCase("API")) {
             test.info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             test.pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
         } else if (testCategory.equalsIgnoreCase("WEB")) {
-            test.pass(testPassDetails);
+            try {
+                test.pass(testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshot).build());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
 
     public void onTestFailure(ITestResult result) {
-        test = extent.createTest(result.getName());
-        test.assignCategory(result.getMethod().getGroups());
         testCategory = result.getMethod().getDescription();
+
+        test = extent.createTest(testName);
+        test.assignCategory(testCategory);
 
         if (testCategory.equalsIgnoreCase("API")) {
             test.info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
@@ -140,8 +150,11 @@ public class TestListener implements ITestListener {
 
     public void onTestSkipped(ITestResult result)
     {
-        test = extent.createTest(result.getName());
-        test.assignCategory(result.getMethod().getGroups());
+        testCategory = result.getMethod().getDescription();
+
+        test = extent.createTest(testName);
+        test.assignCategory(testCategory);
+
         test.info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog()  + "</br></pre>");
         test.skip("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
     }

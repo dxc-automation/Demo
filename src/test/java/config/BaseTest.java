@@ -3,7 +3,10 @@ package config;
 import data.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.demo.ScreenshotUtil;
 import org.demo.Utilities;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import java.awt.*;
@@ -11,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.ParseException;
+
+import static config.TestListener.extent;
 
 
 @Slf4j
@@ -49,6 +54,7 @@ public abstract class BaseTest {
             testName = testAnnotation.testName();
         }
     }
+
 
 
     @AfterSuite(alwaysRun = true)

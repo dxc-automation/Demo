@@ -1,6 +1,10 @@
 
 package tests.web;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.MediaEntityModelProvider;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.Markup;
 import config.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +15,10 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.RegistrationPage;
 
-import static config.TestListener.test;
-import static config.TestListener.testPassDetails;
+import java.io.File;
+
+import static config.TestListener.*;
+import static org.demo.ScreenshotUtil.takeScreenshot;
 
 public class RegistrationTest extends BaseTest {
 
@@ -74,6 +80,8 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(form.modalContainsText(constants.getFirstHobby()));
         Assert.assertTrue(form.modalContainsText(constants.getSecondHobby()));
         Assert.assertTrue(form.modalContainsText(constants.getAddress()));
+
+        screenshot = takeScreenshot(driver,"test");
 
         form.closeModal();
 
