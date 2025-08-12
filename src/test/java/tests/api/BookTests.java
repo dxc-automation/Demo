@@ -15,13 +15,13 @@ public class BookTests extends BaseTest {
     private Books.Data data = new Books.Data();
 
 
-    @Test(testName = "[GET] List All Books", description = "API", priority = 0)
+    @Test(testName = "[GET] List All Books", description = "API", priority = 1)
     public void listAllBooks() throws Exception {
         Response response = books.GET_Books("");
         Assert.assertEquals(response.getStatusCode(), 200, "Expected status code 200");
     }
 
-    @Test(testName = "[POST] Add New Book", description = "API", priority = 1)
+    @Test(testName = "[POST] Add New Book", description = "API", priority = 0)
     public void addNewBook() throws Exception {
         data.setBookId(1);
         data.setBookTitle("New Book");
