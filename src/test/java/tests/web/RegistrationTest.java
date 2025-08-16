@@ -1,21 +1,20 @@
 
 package tests.web;
 
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.MediaEntityModelProvider;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.Markup;
 import config.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.RegistrationPage;
 
 import java.io.File;
+import java.util.logging.Level;
 
 import static config.TestListener.*;
 import static org.demo.ScreenshotUtil.takeScreenshot;
@@ -26,30 +25,13 @@ public class RegistrationTest extends BaseTest {
     private RegistrationPage form;
 
 
-    @Parameters("browser")
+
     @BeforeClass
-    public void setupDriver(@Optional("chrome") String browser) {
-        switch (browser.toLowerCase()) {
-
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-
-            case "chrome":
-            default:
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--start-maximized");
-                options.addArguments("--incognito");
-
-                driver = new ChromeDriver(options);
-                break;
-        }
-        setDriver(driver);
+    public void init() throws InterruptedException {
+        driver = setupDriver("chrome");
+        Thread.sleep(3000);
         form = new RegistrationPage(driver);
     }
-
 
 
     @Test(testName = "[WEB] Registration Form", description = "WEB")
@@ -93,12 +75,5 @@ public class RegistrationTest extends BaseTest {
                 + "3. Submit form</br>"
                 + "4. Wait for modal dialog to be displayed and verify that all data was successfully submitted"
                 + "</pre>";
-    }
-
-    @AfterTest
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }

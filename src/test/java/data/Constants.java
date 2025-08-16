@@ -5,8 +5,48 @@ import org.demo.Excel;
 import java.io.IOException;
 import java.text.ParseException;
 
+import static org.demo.Excel.readFromExcel;
+
 public class Constants {
 
+
+    //***   INSTAGRAM
+    private String url;
+    private String username;
+    private String password;
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void readInstagramData(int row) throws IOException, ParseException {
+        setUrl(readFromExcel("Instagram", row, 0).toString());
+        setUsername(readFromExcel("Instagram", row, 1).toString());
+        setPassword(readFromExcel("Instagram", row, 2).toString());
+    }
+
+
+    //***   REGISTRATION
 
     private String firstName;
     private String lastName;
@@ -20,6 +60,7 @@ public class Constants {
     private String address;
     private String state;
     private String city;
+
 
 
     public void setFirstName(String firstName) {
@@ -122,17 +163,17 @@ public class Constants {
 
 
     public void readTestData(String sheet, int row) throws IOException, ParseException {
-        setFirstName(Excel.readFromExcel(sheet, row, 0).toString());
-        setLastName(Excel.readFromExcel(sheet, row, 1).toString());
-        setEmail(Excel.readFromExcel(sheet, row, 2).toString());
-        setGender(Excel.readFromExcel(sheet, row, 3).toString());
-        setMobile(Excel.readFromExcel(sheet, row, 4).toString());
-        setBirthDate(Excel.readFromExcel(sheet, row, 5).toString());
-        setSubject(Excel.readFromExcel(sheet, row, 6).toString());
-        setFirstHobby(Excel.readFromExcel(sheet, row, 7).toString());
-        setSecondHobby(Excel.readFromExcel(sheet, row, 8).toString());
-        setAddress(Excel.readFromExcel(sheet, row, 9).toString());
-        setState(Excel.readFromExcel(sheet, row, 10).toString());
-        setCity(Excel.readFromExcel(sheet, row, 11).toString());
+        setFirstName(readFromExcel(sheet, row, 0).toString());
+        setLastName(readFromExcel(sheet, row, 1).toString());
+        setEmail(readFromExcel(sheet, row, 2).toString());
+        setGender(readFromExcel(sheet, row, 3).toString());
+        setMobile(readFromExcel(sheet, row, 4).toString());
+        setBirthDate(readFromExcel(sheet, row, 5).toString());
+        setSubject(readFromExcel(sheet, row, 6).toString());
+        setFirstHobby(readFromExcel(sheet, row, 7).toString());
+        setSecondHobby(readFromExcel(sheet, row, 8).toString());
+        setAddress(readFromExcel(sheet, row, 9).toString());
+        setState(readFromExcel(sheet, row, 10).toString());
+        setCity(readFromExcel(sheet, row, 11).toString());
     }
 }

@@ -78,12 +78,10 @@ public class TestListener implements ITestListener {
     }
 
 
-    @Override
-    public void onStart(ITestContext testContext)
-    {
-        String reportName="Automation_Report.html";
+    public void onStart(ITestContext testContext) {
+        String reportName = "Automation_Report.html";
 
-        sparkReporter=new ExtentSparkReporter("./test-output/" + reportName);//specify location of the report
+        sparkReporter = new ExtentSparkReporter("./test-output/" + reportName);//specify location of the report
 
         sparkReporter.config().setDocumentTitle("Automation Report"); // Title of report
         sparkReporter.config().setReportName("Automation Report"); // name of the report
@@ -96,7 +94,7 @@ public class TestListener implements ITestListener {
         extent.attachReporter(sparkReporter);
         extent.setSystemInfo("Operating System", System.getProperty("os.name"));
         extent.setSystemInfo("User Name", System.getProperty("user.name"));
-        extent.setSystemInfo("Environemnt","QA");
+        extent.setSystemInfo("Environemnt", "QA");
     }
 
     public void onTestSuccess(ITestResult result) {
@@ -110,7 +108,7 @@ public class TestListener implements ITestListener {
             test.pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
         } else if (testCategory.equalsIgnoreCase("WEB")) {
             try {
-                test.pass(testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshot).build());
+                test.log(Status.PASS, "<pre>" + testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshot).build());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -137,9 +135,10 @@ public class TestListener implements ITestListener {
             if (screenshotPath != null) {
                 try {
                     Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                System.out.println("🔻 Screenshot for failed test saved at: " + screenshotPath);
-                test.fail("<br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath("../" + fileName).build());
-                test.fail("<br>" + result.getThrowable() + "<br>");
+                    System.out.println("🔻 Screenshot for failed test saved at: " + screenshotPath);
+                    test.log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath("../" + fileName).build());
+                    test.log(Status.FAIL, "<pre><br>" + result.getThrowable() + "<br></pre>");
+                    driver.quit();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

@@ -19,6 +19,12 @@
                 </methods>
             </class>
 
+            <class name="tests.web.InstagramTest">
+                <methods>
+                    <include name="testComments"/>
+                </methods>
+            </class>
+
             <class name="tests.web.RegistrationTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
