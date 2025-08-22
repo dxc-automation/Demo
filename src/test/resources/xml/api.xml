@@ -5,7 +5,7 @@
         <listener class-name="config.TestListener"/>
     </listeners>
 
-    <test name="BookTests">
+    <test name="Books">
         <classes>
             <class name="tests.api.BookTests">
                 <methods>
@@ -17,6 +17,16 @@
                     <include name="updateNonExistedBook"/>
                     <include name="deleteBook"/>
                     <include name="deleteNonExistingBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Users">
+        <classes>
+            <class name="tests.api.UserTests">
+                <methods>
+                    <include name="testCreateUser"/>
                 </methods>
             </class>
         </classes>
