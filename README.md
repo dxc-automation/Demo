@@ -3,6 +3,7 @@
 # Automation Framework
 
 ## Tech Stack
+
 1. Java
 2. Rest Assured
 3. TestNG
@@ -11,6 +12,7 @@
 6. Jenkins
 
 ### Automation Framework with TestNG
+
 1. Rest Assured with TestNG Framework to test and validate APIs
 2. Examples on JSON Parsing, OAuth 2.0 Authentication and getting Token, GET, POST, PUT, PATCH operations
 3. Extent Report 5.x for generating Reports for TestNG Test Run
@@ -20,6 +22,7 @@
 7. Sample XML files to run Tests based on Groups/Parallel
 
 ### Maven Commands to Run Tests
+
 To execute the test suite, run:
 
 ```bash
@@ -33,13 +36,10 @@ To run specific XML file:
 mvn clean package test -DsuiteXmlFile=xml-suites/$TESTSUITE***;
 ```
 
-
 ### Project Structure
 
 ```
-egt_test_lab
-
-├── src               
+├── src         
     └── main
         └── java
             └── utils
@@ -52,17 +52,15 @@ egt_test_lab
             ├── BaseTest
             ├── TestListener
             ├── WebManager
-            
+      
         └── data
             ├── Constants
             ├── data.xlsx
-            
+      
         └── pages
             ├── RegistrationPage
-            
-        └── tests        
+      
+        └── tests  
             ├── CreateUserTest
             ├── RegistrationTest 
 ```
-
-

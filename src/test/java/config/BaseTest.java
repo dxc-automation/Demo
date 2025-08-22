@@ -82,7 +82,7 @@ public class BaseTest {
     }
 
 
-    @AfterTest
+    @AfterClass
     public void teardown() {
         if (driver != null) {
             driver.quit();

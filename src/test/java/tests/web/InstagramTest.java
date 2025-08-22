@@ -20,7 +20,7 @@ public class InstagramTest extends BaseTest {
     private LoginPage page;
 
 
-    @BeforeTest
+    @BeforeClass
     public void init() throws InterruptedException {
         driver = setupDriver("chrome");
         Thread.sleep(3000);

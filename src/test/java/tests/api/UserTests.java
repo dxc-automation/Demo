@@ -16,7 +16,9 @@ public class UserTests extends BaseTest {
 
 
     @Test(testName = "[POST] Create User", description = "API")
-    public void testCreateUser(String expectedUserName, String expectedUserJob) throws Exception {
+    public void testCreateUser() throws Exception {
+        String expectedUserName = "QA";
+        String expectedUserJob  = "Automation";
         Response response = users.POST_NewUser(expectedUserName, expectedUserJob);
 
         Assert.assertEquals(response.getStatusCode(), 201, "Expected status code 201");

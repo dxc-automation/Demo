@@ -18,6 +18,7 @@ public class LoginPage {
     private final By usernameInput = By.xpath("//input[@name='username']");
     private final By passwordInput = By.xpath("//input[@name='password']");
     private final By submitBtn = By.xpath("//button[@type='submit']");
+    private final By notNowBtn = By.xpath("(//div[contains(text(),'Not now')])[1]");
 
 
     public LoginPage(WebDriver driver) {
@@ -53,7 +54,4 @@ public class LoginPage {
         wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
         driver.findElement(submitBtn).click();
     }
-
-
-
 }
