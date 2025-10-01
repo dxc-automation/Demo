@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite">
+
+    <listeners>
+        <listener class-name="config.ExtentTestNGListener"/>
+    </listeners>
+
+
+    <test name="Instagram">
+        <classes>
+            <class name="tests.web.InstagramTest">
+                <methods>
+                    <include name="testComments"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Registration">
+        <classes>
+            <class name="tests.web.RegistrationTest">
+                <methods>
+                    <include name="testRegistrationFormSubmission"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

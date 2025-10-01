@@ -23,6 +23,7 @@ import java.text.ParseException;
 import com.valensas.undetected.chrome.driver.*;
 
 
+
 @Slf4j
 public class BaseTest {
 
@@ -34,7 +35,7 @@ public class BaseTest {
     public  static WebDriver driver;
     private static Desktop   desktop;
 
-    public static String testName;
+    public static String testName = "";
 
 
     public static WebDriver setupDriver(String browser) throws InterruptedException {

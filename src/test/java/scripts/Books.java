@@ -7,7 +7,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.Response;
 
-import static config.TestListener.*;
+import static config.ExtentTestNGListener.*;
 
 public class Books {
 

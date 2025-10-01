@@ -7,12 +7,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.Response;
 
-import static config.TestListener.requestCapture;
-import static config.TestListener.responseCapture;
-import static config.TestListener.setRequestLog;
-import static config.TestListener.setResponseLog;
-import static config.TestListener.writeRequestLog;
-import static config.TestListener.writeResponseLog;
+import static config.ExtentTestNGListener.*;
 
 public class Users {
 

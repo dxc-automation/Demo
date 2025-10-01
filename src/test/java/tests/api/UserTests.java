@@ -1,15 +1,16 @@
 package tests.api;
 
 import config.BaseTest;
-import config.TestListener;
+import config.ExtentTestNGListener;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import scripts.Users;
 
 import static io.restassured.RestAssured.given;
 
-
+@Listeners(ExtentTestNGListener.class)
 public class UserTests extends BaseTest {
 
     private Users users = new Users();

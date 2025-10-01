@@ -11,9 +11,8 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.RegistrationPage;
 
-import static config.TestListener.screenshot;
-import static config.TestListener.testPassDetails;
 import static org.demo.ScreenshotUtil.takeScreenshot;
+import static config.ExtentTestNGListener.*;
 
 public class InstagramTest extends BaseTest {
 

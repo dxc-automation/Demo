@@ -16,7 +16,7 @@ import pages.RegistrationPage;
 import java.io.File;
 import java.util.logging.Level;
 
-import static config.TestListener.*;
+import static config.ExtentTestNGListener.*;
 import static org.demo.ScreenshotUtil.takeScreenshot;
 
 public class RegistrationTest extends BaseTest {

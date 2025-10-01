@@ -1,14 +1,16 @@
 package tests.api;
 
 import config.BaseTest;
-import config.TestListener;
+import config.ExtentTestNGListener;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import scripts.Books;
 
+import static config.ExtentTestNGListener.*;
+
+@Listeners(ExtentTestNGListener.class)
 public class BookTests extends BaseTest {
 
     private Books books = new Books();

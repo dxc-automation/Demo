@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite">
+
+    <listeners>
+        <listener class-name="config.ExtentTestNGListener"/>
+    </listeners>
+
+    <test name="Books">
+        <classes>
+            <class name="tests.api.BookTests">
+                <methods>
+                    <include name="addNewBook"/>
+                    <include name="addNewBookWithIncorrectData"/>
+                    <include name="listAllBooks"/>
+                    <include name="listSingleBook"/>
+                    <include name="updateBook"/>
+                    <include name="updateNonExistedBook"/>
+                    <include name="deleteBook"/>
+                    <include name="deleteNonExistingBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Users">
+        <classes>
+            <class name="tests.api.UserTests">
+                <methods>
+                    <include name="testCreateUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
