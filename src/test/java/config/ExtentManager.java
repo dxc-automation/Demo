@@ -43,7 +43,7 @@ public class ExtentManager {
         return extent;
     }
 
-    public static void captureScreenshot() {
+    public static File captureScreenshot() {
         TakesScreenshot screenshot = (TakesScreenshot)driver;
         // Call method to capture screenshot
         File src = screenshot.getScreenshotAs(OutputType.FILE);
@@ -51,11 +51,12 @@ public class ExtentManager {
         {
             Date d = new Date();
             String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".png";
-            screenshotName = new File(System.getProperty("user.dir") + "\\test-output\\screenshots\\" + screenshotFile);
+            screenshotName = new File("./test-output/screenshots/" + screenshotFile);
             FileUtils.copyFile(src, screenshotName);
             System.out.println("Successfully captured a screenshot");
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
         }
+        return screenshotName;
     }
 }

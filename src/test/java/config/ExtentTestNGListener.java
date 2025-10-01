@@ -103,10 +103,6 @@ public class ExtentTestNGListener implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         testThread.get().assignCategory(testCategory);
 
-        String log="TEST CASE PASSED";
-        Markup markup = MarkupHelper.createLabel(log, ExtentColor.GREEN);
-        testThread.get().log(Status.PASS, markup);
-
         if (testCategory.equalsIgnoreCase("API")) {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
@@ -115,7 +111,6 @@ public class ExtentTestNGListener implements ITestListener {
                 ExtentManager.captureScreenshot();
                 testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>",
                         MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.toString()).build());
-                testThread.get().addScreenCaptureFromPath(ExtentManager.screenshotName.getPath());
             } catch (Exception e) {
 
             }

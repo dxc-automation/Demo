@@ -2,6 +2,7 @@
 package tests.web;
 
 import config.BaseTest;
+import config.ExtentTestNGListener;
 import data.Constants;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -15,6 +16,8 @@ import static config.ExtentTestNGListener.*;
 import static org.demo.ScreenshotUtil.screenshot;
 import static org.demo.ScreenshotUtil.takeScreenshot;
 
+
+@Listeners(ExtentTestNGListener.class)
 public class RegistrationTest extends BaseTest {
 
     private WebDriver driver;

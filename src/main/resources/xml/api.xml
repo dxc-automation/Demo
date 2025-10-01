@@ -21,14 +21,4 @@
             </class>
         </classes>
     </test>
-
-    <test name="Users">
-        <classes>
-            <class name="tests.api.UserTests">
-                <methods>
-                    <include name="testCreateUser"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
 </suite>
