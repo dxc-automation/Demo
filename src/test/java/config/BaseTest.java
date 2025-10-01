@@ -32,7 +32,6 @@ public class BaseTest {
     public  static final  String  root = System.getProperty("user.dir");
     public  static final  String  path = root + File.separator + "library-manager" + File.separator + "LibraryManager.bat";
 
-    public  static Constants constants;
     public  static WebDriver driver;
     public static Desktop   desktop;
 
@@ -59,14 +58,6 @@ public class BaseTest {
         }
         Thread.sleep(3000);
         return driver;
-    }
-
-
-    @BeforeSuite
-    public void setupReport() throws IOException, ParseException, InterruptedException {
-        constants = new Constants();
-        constants.readTestData("TestData", 1);
-        constants.readInstagramData(1);
     }
 
 

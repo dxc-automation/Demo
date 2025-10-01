@@ -2,35 +2,35 @@
 package tests.web;
 
 import config.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import data.Constants;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.RegistrationPage;
 
-import java.io.File;
-import java.util.logging.Level;
+import java.io.IOException;
+import java.text.ParseException;
 
 import static config.ExtentTestNGListener.*;
+import static org.demo.ScreenshotUtil.screenshot;
 import static org.demo.ScreenshotUtil.takeScreenshot;
 
 public class RegistrationTest extends BaseTest {
 
     private WebDriver driver;
     private RegistrationPage form;
+    private Constants constants;
 
 
 
     @BeforeClass
-    public void init() throws InterruptedException {
+    public void init() throws InterruptedException, IOException, ParseException {
         driver = setupDriver("chrome");
         Thread.sleep(3000);
         form = new RegistrationPage(driver);
+
+        constants = new Constants();
+        constants.readTestData("TestData", 1);
     }
 
 
@@ -63,8 +63,7 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(form.modalContainsText(constants.getSecondHobby()));
         Assert.assertTrue(form.modalContainsText(constants.getAddress()));
 
-        screenshot = takeScreenshot(driver,"test");
-
+        screenshotName = takeScreenshot(driver, "screen");
         form.closeModal();
 
         testPassDetails = "<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"

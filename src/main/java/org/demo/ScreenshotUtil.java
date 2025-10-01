@@ -30,7 +30,7 @@ public class ScreenshotUtil {
         }
     }
 
-    public static String TakeScreenshot(WebDriver driver, String name) {
+    public static String screenshot(WebDriver driver, String name) {
         try {
             File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             String destDir = System.getProperty("user.dir") + "/test-output/screenshots/";

@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import config.ExtentManager;
 import org.demo.ScreenshotUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,7 +19,6 @@ import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-import static com.alibaba.fastjson.JSONPatch.OperationType.test;
 import static config.BaseTest.driver;
 
 public class ExtentTestNGListener implements ITestListener {
@@ -39,7 +37,7 @@ public class ExtentTestNGListener implements ITestListener {
     private static String requestLog;
     public  static String testCategory;
     public  static String testPassDetails;
-    public  static String screenshot;
+    public  static String screenshotName;
 
     public static void setRequestLog(String newRequestLog) {
         requestLog = newRequestLog;
@@ -103,9 +101,9 @@ public class ExtentTestNGListener implements ITestListener {
         if (testCategory.equalsIgnoreCase("API")) {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
-        } else if (testCategory.equalsIgnoreCase("WEB")) {
+        } else if (testCategory.equalsIgnoreCase("WEB") && screenshotName != null) {
             try {
-                testThread.get().log(Status.PASS, "<pre>" + testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshot).build());
+                testThread.get().log(Status.PASS, "<pre>" + testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -146,8 +144,8 @@ public class ExtentTestNGListener implements ITestListener {
             java.lang.reflect.Method m = testInstance.getClass().getMethod("getDriver");
             Object driver = m.invoke(testInstance);
             if (driver != null) {
-                String screenshotPath = ScreenshotUtil.takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
-                testThread.get().addScreenCaptureFromPath(screenshotPath, "Failed Screenshot");
+                screenshotName = ScreenshotUtil.takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
+                testThread.get().addScreenCaptureFromPath(screenshotName, "Failed Screenshot");
             }
         } catch (NoSuchMethodException e) {
             // няма getDriver - игнорирай или логни
