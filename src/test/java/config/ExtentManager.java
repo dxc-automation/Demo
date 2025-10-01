@@ -1,13 +1,25 @@
 package config;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentAventReporter;
+import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Protocol;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+import static config.BaseTest.driver;
 
 public class ExtentManager {
 
     private static ExtentReports extent;
+    public static File screenshotName;
 
 
     public synchronized static ExtentReports getInstance() {
@@ -29,5 +41,21 @@ public class ExtentManager {
         extent.setSystemInfo("Environemnt", "QA");
 
         return extent;
+    }
+
+    public static void captureScreenshot() {
+        TakesScreenshot screenshot = (TakesScreenshot)driver;
+        // Call method to capture screenshot
+        File src = screenshot.getScreenshotAs(OutputType.FILE);
+        try
+        {
+            Date d = new Date();
+            String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+            screenshotName = new File(System.getProperty("user.dir") + "\\test-output\\screenshots\\" + screenshotFile);
+            FileUtils.copyFile(src, screenshotName);
+            System.out.println("Successfully captured a screenshot");
+        } catch (IOException e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
+        }
     }
 }

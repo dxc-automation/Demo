@@ -4,6 +4,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.demo.ScreenshotUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,6 +21,7 @@ import java.io.PrintStream;
 import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 
 import static config.BaseTest.driver;
 import static org.demo.ScreenshotUtil.*;
@@ -99,15 +103,20 @@ public class ExtentTestNGListener implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         testThread.get().assignCategory(testCategory);
 
+        String log="TEST CASE PASSED";
+        Markup markup = MarkupHelper.createLabel(log, ExtentColor.GREEN);
+        testThread.get().log(Status.PASS, markup);
+
         if (testCategory.equalsIgnoreCase("API")) {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
         } else if (testCategory.equalsIgnoreCase("WEB")) {
             try {
-                System.out.println(screenshotName);
-                testThread.get().log(Status.PASS, "<center>SCREENSHOT</center>" , MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                ExtentManager.captureScreenshot();
+                testThread.get().pass("<b>" + "<font color=" + "green>" + "Screenshot" + "</font>" + "</b>",
+                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.toString()).build());
+            } catch (Exception e) {
+
             }
         }
     }
@@ -117,20 +126,26 @@ public class ExtentTestNGListener implements ITestListener {
         Throwable throwable = result.getThrowable();
         testThread.get().assignCategory(testCategory);
 
+        String failureLogg="TEST CASE FAILED";
+        Markup markup = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
+        testThread.get().log(Status.FAIL, markup);
+
         if (testCategory.equalsIgnoreCase("API")) {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
         } else if(testCategory.equalsIgnoreCase("WEB")) {
-                try {
-                    screenshotName =getScreenshot(driver);
-                    System.out.println("🔻 Screenshot for failed test saved at: " + screenshotName);
-                    testThread.get().log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath(screenshotName).build());
-                    testThread.get().log(Status.FAIL, "<pre><br>" + throwable + "<br></pre>");
-                    driver.quit();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+            String excepionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+            testThread.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
+                    + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>"+" \n");
+            try {
+                ExtentManager.captureScreenshot();
+                testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
+                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.toString()).build());
+            } catch (Exception e) {
+
+            }
         }
+
 
         Object testInstance = result.getInstance();
         try {

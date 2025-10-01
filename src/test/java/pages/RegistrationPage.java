@@ -96,7 +96,9 @@ public class RegistrationPage {
     public void selectHobby(String hobby) {
         By locator = By.xpath ("//label[text()='" + hobby + "']");
         wait.until(ExpectedConditions.elementToBeClickable(locator));
-        driver.findElement(locator).click();
+
+        WebElement element = driver.findElement(locator);
+        js.executeScript("arguments[0].click();", element);
     }
 
 
@@ -105,14 +107,20 @@ public class RegistrationPage {
     }
 
 
-    public void selectStateAndCity(String state, String city) {
+    public void selectStateAndCity(String state, String city) throws InterruptedException {
         js.executeScript("window.scrollBy(0,250)");
         WebElement stateInput = driver.findElement(By.id("react-select-3-input"));
+        js.executeScript("arguments[0].click();", stateInput);
+        Thread.sleep(500);
         stateInput.sendKeys(state);
+        Thread.sleep(1000);
         stateInput.sendKeys(Keys.ENTER);
 
         WebElement cityInput = driver.findElement(By.id("react-select-4-input"));
+        wait.until(ExpectedConditions.elementToBeClickable(cityInput));
+        js.executeScript("arguments[0].click();", cityInput);
         cityInput.sendKeys(city);
+        Thread.sleep(1000);
         cityInput.sendKeys(Keys.ENTER);
     }
 
