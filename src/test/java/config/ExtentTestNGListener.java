@@ -20,6 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 import static config.BaseTest.driver;
+import static org.demo.ScreenshotUtil.takeScreenshot;
 
 public class ExtentTestNGListener implements ITestListener {
 
@@ -120,17 +121,10 @@ public class ExtentTestNGListener implements ITestListener {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
         } else if(testCategory.equalsIgnoreCase("WEB")) {
-            String screenshotPath = ScreenshotUtil.takeScreenshot(driver, result.getName());
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File source = ts.getScreenshotAs(OutputType.FILE);
-            String fileName = "test-output/screenshots/" + result.getName() + "_failed.png";
-            File destination = new File(fileName);
-            destination.getParentFile().mkdirs(); // create dirs if not exists
-            if (screenshotPath != null) {
                 try {
-                    Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                    System.out.println("🔻 Screenshot for failed test saved at: " + screenshotPath);
-                    testThread.get().log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath("../" + fileName).build());
+                    screenshotName = takeScreenshot(driver, result.getName());
+                    System.out.println("🔻 Screenshot for failed test saved at: " + screenshotName);
+                    testThread.get().log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
                     testThread.get().log(Status.FAIL, "<pre><br>" + throwable + "<br></pre>");
                     driver.quit();
                 } catch (IOException e) {
@@ -145,7 +139,7 @@ public class ExtentTestNGListener implements ITestListener {
             java.lang.reflect.Method m = testInstance.getClass().getMethod("getDriver");
             Object driver = m.invoke(testInstance);
             if (driver != null) {
-                screenshotName = ScreenshotUtil.takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
+                screenshotName = takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
                 testThread.get().addScreenCaptureFromPath(screenshotName, "Failed Screenshot");
             }
         } catch (NoSuchMethodException e) {
