@@ -50,7 +50,7 @@ public class ExtentManager {
         try
         {
             Date d = new Date();
-            String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+            String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".png";
             screenshotName = new File(System.getProperty("user.dir") + "\\test-output\\screenshots\\" + screenshotFile);
             FileUtils.copyFile(src, screenshotName);
             System.out.println("Successfully captured a screenshot");

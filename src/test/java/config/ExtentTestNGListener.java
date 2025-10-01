@@ -113,8 +113,9 @@ public class ExtentTestNGListener implements ITestListener {
         } else if (testCategory.equalsIgnoreCase("WEB")) {
             try {
                 ExtentManager.captureScreenshot();
-                testThread.get().pass("<b>" + "<font color=" + "green>" + "Screenshot" + "</font>" + "</b>",
+                testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>",
                         MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.toString()).build());
+                testThread.get().addScreenCaptureFromPath(ExtentManager.screenshotName.getPath());
             } catch (Exception e) {
 
             }
