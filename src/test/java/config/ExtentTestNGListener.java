@@ -104,6 +104,7 @@ public class ExtentTestNGListener implements ITestListener {
         } else if (testCategory.equalsIgnoreCase("WEB")) {
             try {
                 System.out.println(screenshotName);
+                testThread.get().addScreenCaptureFromPath(screenshotName);
                 testThread.get().log(Status.PASS, testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
             } catch (IOException e) {
                 throw new RuntimeException(e);
