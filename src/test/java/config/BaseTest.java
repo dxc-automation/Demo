@@ -19,6 +19,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import com.valensas.undetected.chrome.driver.*;
 
@@ -72,6 +74,11 @@ public class BaseTest {
 
     @AfterSuite(alwaysRun = true)
     public void tearDownReport() throws IOException {
+        try {
+            Files.createDirectories(Paths.get("test-output-archive"));
+        } catch (Exception exception) {
+            System.out.println("test-output-archive directory already exists");
+        }
         String folder = "test-output";
         String file   = "test-output-archive/" + Utilities.getDate() + ".zip";
         Utilities.zip(folder, file);

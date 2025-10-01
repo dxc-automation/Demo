@@ -101,9 +101,10 @@ public class ExtentTestNGListener implements ITestListener {
         if (testCategory.equalsIgnoreCase("API")) {
             testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
             testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
-        } else if (testCategory.equalsIgnoreCase("WEB") && screenshotName != null) {
+        } else if (testCategory.equalsIgnoreCase("WEB")) {
             try {
-                testThread.get().log(Status.PASS, "<pre>" + testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
+                System.out.println(screenshotName);
+                testThread.get().log(Status.PASS, testPassDetails, MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
