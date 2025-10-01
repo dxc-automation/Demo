@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +15,7 @@ public class RegistrationPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
+    private Actions actions;
 
     private final By firstNameInput = By.id("firstName");
     private final By lastNameInput  = By.id("lastName");
@@ -23,9 +25,11 @@ public class RegistrationPage {
     private final By modalCloseButton  = By.id("closeLargeModal");
     private final By modalDialog       = By.className("modal-content");
     private final By submitButton      = By.id("submit");
+    private final By dateOfBirthLabel  = By.id("dateOfBirth-label");
 
 
     public RegistrationPage(WebDriver driver) {
+        this.actions = new Actions(driver);
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.js = (JavascriptExecutor) driver;
@@ -64,14 +68,18 @@ public class RegistrationPage {
     }
 
 
-    public void selectDateOfBirth(String birthDate) throws ParseException {
+    public void selectDateOfBirth(String birthDate) throws ParseException, InterruptedException {
         driver.findElement(dateOfBirthInput).click();
 
-        WebElement element = driver.findElement(dateOfBirthInput);
-        js.executeScript("arguments[0].value = '';", element);
+        WebElement input = driver.findElement(dateOfBirthInput);
+        js.executeScript("arguments[0].value = '';", input);
 
         driver.findElement(dateOfBirthInput).sendKeys(birthDate);
         driver.findElement(mobileNumberInput).click();
+
+        WebElement label = driver.findElement(dateOfBirthLabel);
+        js.executeScript("arguments[0].value = '';", input);
+        Thread.sleep(1000);
     }
 
 
@@ -83,7 +91,9 @@ public class RegistrationPage {
 
 
     public void selectHobby(String hobby) {
-        driver.findElement(By.xpath("//label[text()='" + hobby + "']")).click();
+        By locator = By.xpath ("//label[text()='" + hobby + "']");
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        driver.findElement(locator).click();
     }
 
 

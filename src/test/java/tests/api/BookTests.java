@@ -4,9 +4,14 @@ import config.BaseTest;
 import config.ExtentTestNGListener;
 import io.restassured.response.Response;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import scripts.Books;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 import static config.ExtentTestNGListener.*;
 
@@ -15,6 +20,14 @@ public class BookTests extends BaseTest {
 
     private Books books = new Books();
     private Books.Data data = new Books.Data();
+
+
+    @BeforeClass
+    public void init() throws IOException {
+        System.setProperty("java.awt.headless", "false");
+        desktop = Desktop.getDesktop();
+        desktop.open(new File(path));
+    }
 
 
     @Test(testName = "[POST] Add New Book", description = "API", priority = 0)

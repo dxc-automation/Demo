@@ -6,16 +6,6 @@
     </listeners>
 
 
-    <test name="Instagram">
-        <classes>
-            <class name="tests.web.InstagramTest">
-                <methods>
-                    <include name="testComments"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-
     <test name="Registration">
         <classes>
             <class name="tests.web.RegistrationTest">

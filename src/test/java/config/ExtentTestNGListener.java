@@ -37,7 +37,7 @@ public class ExtentTestNGListener implements ITestListener {
     private static String log;
     private static String responseLog;
     private static String requestLog;
-    private static String testCategory;
+    public  static String testCategory;
     public  static String testPassDetails;
     public  static String screenshot;
 
@@ -93,11 +93,11 @@ public class ExtentTestNGListener implements ITestListener {
         System.out.println(testName);
         ExtentTest test = extent.createTest(testName);
         testThread.set(test);
+        testCategory = result.getMethod().getDescription();
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        testCategory = result.getMethod().getDescription();
         testThread.get().assignCategory(testCategory);
 
         if (testCategory.equalsIgnoreCase("API")) {
@@ -115,8 +115,6 @@ public class ExtentTestNGListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         Throwable throwable = result.getThrowable();
-
-        testCategory = result.getMethod().getDescription();
         testThread.get().assignCategory(testCategory);
 
         if (testCategory.equalsIgnoreCase("API")) {

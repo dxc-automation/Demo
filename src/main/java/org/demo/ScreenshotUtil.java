@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,6 +26,21 @@ public class ScreenshotUtil {
             return destination.toString();
         } catch (IOException e) {
             System.err.println("❌ Failed to save screenshot: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public static String TakeScreenshot(WebDriver driver, String name) {
+        try {
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String destDir = System.getProperty("user.dir") + "/test-output/screenshots/";
+            Files.createDirectories(Paths.get(destDir));
+            String destPath = destDir + name + "_" + System.currentTimeMillis() + ".png";
+            Path dest = Paths.get(destPath);
+            Files.copy(src.toPath(), dest);
+            return destPath;
+        } catch (IOException e) {
+            e.printStackTrace();
             return null;
         }
     }

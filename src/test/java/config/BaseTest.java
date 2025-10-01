@@ -22,6 +22,7 @@ import java.lang.reflect.Method;
 import java.text.ParseException;
 import com.valensas.undetected.chrome.driver.*;
 
+import static config.ExtentTestNGListener.testCategory;
 
 
 @Slf4j
@@ -33,7 +34,7 @@ public class BaseTest {
 
     public  static Constants constants;
     public  static WebDriver driver;
-    private static Desktop   desktop;
+    public static Desktop   desktop;
 
     public static String testName = "";
 
@@ -63,23 +64,9 @@ public class BaseTest {
 
     @BeforeSuite
     public void setupReport() throws IOException, ParseException, InterruptedException {
-        System.setProperty("java.awt.headless", "false");
-        desktop = Desktop.getDesktop();
-        desktop.open(new File(path));
-
         constants = new Constants();
         constants.readTestData("TestData", 1);
         constants.readInstagramData(1);
-    }
-
-
-    @BeforeMethod
-    public void getTestName(Method method) {
-        testName = method.getName();
-        Test testAnnotation = method.getAnnotation(Test.class);
-        if (testAnnotation != null && !testAnnotation.testName().isEmpty()) {
-            testName = testAnnotation.testName();
-        }
     }
 
 
