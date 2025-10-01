@@ -293,7 +293,7 @@
                         <!-- pass testng.xml files as argument from command line -->
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>

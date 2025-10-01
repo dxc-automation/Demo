@@ -20,7 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 import static config.BaseTest.driver;
-import static org.demo.ScreenshotUtil.takeScreenshot;
+import static org.demo.ScreenshotUtil.*;
 
 public class ExtentTestNGListener implements ITestListener {
 
@@ -130,7 +130,6 @@ public class ExtentTestNGListener implements ITestListener {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-            }
         }
 
         Object testInstance = result.getInstance();
