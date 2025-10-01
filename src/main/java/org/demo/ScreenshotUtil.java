@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,17 +32,20 @@ public class ScreenshotUtil {
     }
 
     public static String screenshot(WebDriver driver, String name) {
-        try {
-            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            String destDir = System.getProperty("user.dir") + "/test-output/screenshots/";
-            Files.createDirectories(Paths.get(destDir));
-            String destPath = destDir + name + "_" + System.currentTimeMillis() + ".png";
-            Path dest = Paths.get(destPath);
-            Files.copy(src.toPath(), dest);
-            return destPath;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        String fileName = "test-output/screenshots/" + name + ".png";
+        File destination = new File(fileName);
+        destination.getParentFile().mkdirs(); // create dirs if not exists
+        if (fileName != null) {
+            try {
+                Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("🔻 Screenshot saved at: " + fileName);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+        return fileName;
     }
 }

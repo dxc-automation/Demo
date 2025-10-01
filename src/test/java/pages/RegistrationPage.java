@@ -75,10 +75,11 @@ public class RegistrationPage {
         js.executeScript("arguments[0].value = '';", input);
 
         driver.findElement(dateOfBirthInput).sendKeys(birthDate);
-        driver.findElement(mobileNumberInput).click();
+        driver.findElement(dateOfBirthInput).click();
 
         WebElement label = driver.findElement(dateOfBirthLabel);
-        js.executeScript("arguments[0].value = '';", input);
+        wait.until(ExpectedConditions.elementToBeClickable(dateOfBirthInput));
+        js.executeScript("arguments[0].click = '';", input);
         Thread.sleep(1000);
     }
 
