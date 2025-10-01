@@ -122,9 +122,9 @@ public class ExtentTestNGListener implements ITestListener {
             testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
         } else if(testCategory.equalsIgnoreCase("WEB")) {
                 try {
-                    screenshotName = screenshot(driver, result.getName());
+                    screenshotName =getScreenshot(driver);
                     System.out.println("🔻 Screenshot for failed test saved at: " + screenshotName);
-                    testThread.get().log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath("../" + screenshotName).build());
+                    testThread.get().log(Status.FAIL, "<pre><br><b>FAILED ON SCREEN</b><br>", MediaEntityBuilder.createScreenCaptureFromPath(screenshotName).build());
                     testThread.get().log(Status.FAIL, "<pre><br>" + throwable + "<br></pre>");
                     driver.quit();
                 } catch (IOException e) {

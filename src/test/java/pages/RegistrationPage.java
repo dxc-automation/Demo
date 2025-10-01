@@ -79,7 +79,9 @@ public class RegistrationPage {
 
         WebElement label = driver.findElement(dateOfBirthLabel);
         wait.until(ExpectedConditions.elementToBeClickable(dateOfBirthInput));
-        js.executeScript("arguments[0].click = '';", input);
+        js.executeScript("arguments[0].value = '';", input);
+        Thread.sleep(500);
+        js.executeScript("arguments[0].click();", label);
         Thread.sleep(1000);
     }
 
