@@ -2,65 +2,87 @@
 
 # Automation Framework
 
-## Tech Stack
+## 📘 Overview
 
-1. Java
-2. Rest Assured
-3. TestNG
-4. Maven
-5. Selenium WebDriver
-6. Jenkins
+This project is a **modular Java-based Test Automation Framework** designed to support automated testing across **Web, API, and Desktop** platforms.
+It integrates with **TestNG**, **Maven**, **ExtentReports**, and **Jenkins CI/CD**, providing a complete, scalable, and maintainable testing solution.
 
-### Automation Framework with TestNG
+The framework follows a layered architecture to separate concerns and improve reusability.
 
-1. Rest Assured with TestNG Framework to test and validate APIs
-2. Examples on JSON Parsing, OAuth 2.0 Authentication and getting Token, GET, POST, PUT, PATCH operations
-3. Extent Report 5.x for generating Reports for TestNG Test Run
-4. POJO classes and relevant dto classes for generating Data and using in Tests
-5. Properties file and relevant classes to utilise it
-6. TestNG Custom Annotations and RetryAnalyzer listeners
-7. Sample XML files to run Tests based on Groups/Parallel
+---
 
-### Maven Commands to Run Tests
 
-To execute the test suite, run:
+## 🧩 Architecture & Modules
 
-```bash
-# For Maven
-mvn test will spin up Chrome by default.
+### 1. Core
 
-To run in Firefox, override the suite parameter:
-mvn test -Dbrowser=firefox
+- Common utilities and configuration management
+- WebDriver and API initialization
+- Logging and reporting integration
 
-To run specific XML file:
-mvn clean package test -DsuiteXmlFile=xml-suites/$TESTSUITE***;
+### 2. Web Module
+
+- Page Object Model (POM) design
+- Supports Chrome, Firefox, Edge (via Selenium WebDriver)
+- Handles authentication, synchronization, and data-driven testing
+
+### 3. API Module
+
+- REST API automation using **Rest Assured**
+- JSON Schema validation and response verification
+- Request/response logging and reporting
+
+### 4. Desktop Module
+
+- Windows desktop automation via **WinAppDriver** or equivalent tools
+- Centralized element locators and reusable actions
+
+### 5. Reporting
+
+- Generates **HTML reports** using ExtentReports
+- Includes screenshots on failure and step-level logging
+- Data-driven reports (via Excel/CSV)
+
+---
+
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+- Java 17+
+- Maven 3.9+
+- Chrome / Edge / Firefox (latest version)
+- Node.js (for optional WebDriver Manager)
+- Jenkins (for CI/CD pipeline execution)
+
+---
+
+# 🚀 Running Tests
+
+Test results are automatically generated under:
+/test-output/Automation_Report.html
+
+### Run All Tests
+
+```
+ mvn clean test
 ```
 
-### Project Structure
+### Run Specific Suite
 
 ```
-├── src         
-    └── main
-        └── java
-            └── utils
-                ├── Excel
-                ├── ScreenshotUtil
-                ├── Utilities
-├── test
-    └── java
-        └── config
-            ├── BaseTest
-            ├── TestListener
-            ├── WebManager
-      
-        └── data
-            ├── Constants
-            ├── data.xlsx
-      
-        └── pages
-            ├── RegistrationPage
-      
-        └── tests  
-            ├── CreateUserTest
-            ├── RegistrationTest 
+ mvn test -DsuiteXmlFile=testng.xml
 ```
+
+---
+
+## 🧰 Technologies Used
+
+- Java 17
+- TestNG
+- Maven
+- Rest Assured
+- Selenium WebDriver
+- ExtentReports
+- Jenkins
+- Log4j / SLF4J
