@@ -30,7 +30,7 @@ import static config.ExtentTestNGListener.testCategory;
 @Slf4j
 public class BaseTest {
 
-    private static String chromedriver = "src/main/resources/drivers/chromedriver.exe";
+    private static String chromedriver = "src/main/resources/drivers/chromedriver_141/chromedriver.exe";
     public  static final  String  root = System.getProperty("user.dir");
     public  static final  String  path = root + File.separator + "library-manager" + File.separator + "LibraryManager.bat";
 
