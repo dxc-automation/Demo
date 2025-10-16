@@ -39,6 +39,8 @@ public class BaseTest {
 
     public static String testName = "";
 
+    public static String udid;
+
 
     public static WebDriver setupDriver(String browser) throws InterruptedException {
         switch (browser.toLowerCase()) {
@@ -61,6 +63,13 @@ public class BaseTest {
         }
         Thread.sleep(3000);
         return driver;
+    }
+
+
+    @BeforeSuite
+    public void readDevice() {
+        udid = System.getProperty("env");
+        System.out.println("UDID: " + udid);
     }
 
 
