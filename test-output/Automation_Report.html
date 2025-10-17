@@ -1,533 +1,1069 @@
 
 
-
-
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Automation Report</title>
-        <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
-        <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
-	    <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@6fbbd1c32fbc2463d026da5c6ce2e9eef0d29512/spark/css/spark-style.css" rel="stylesheet" />
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<style type="text/css">
-
-</style></head>    <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
-<body class="spa -report standard">
-    <div class="app header-dark side-nav-folded">
-        <div class="layout">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
 <div class="header navbar">
-    <div class="vheader">
-        <div class="nav-logo">
-          <a href="#">
-            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
-            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
-          </a>
-        </div>
-        <ul class="nav-left">
-          <li class="search-box">
-            <a class="search-toggle" href="javascript:void(0);">
-              <i class="search-icon fa fa-search"></i>
-              <i class="search-icon-close fa fa-close"></i>
-            </a>
-          </li>
-          <li class="search-input">
-            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
-          </li>
-        </ul>
-        <ul class="nav-right">
-          <li class="m-r-10">
-            <a href="#">
-              <span class="badge badge-primary">Automation Report</span>
-            </a>
-          </li>
-            <li class="m-r-10">
-                <a href="#">
-                    <span class="badge badge-primary">Oct 14, 2025 08:47:21 AM</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Automation Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Oct 17, 2025 02:51:38 PM</span></a>
+</li>
+</ul>
+</div>
 </div><div class="side-nav">
-  <div class="side-nav-inner">
-    <ul class="side-nav-menu scrollable">
-      <li class="nav-item dropdown" onclick="toggleView('test-view')">
-        <a id="nav-test" class="dropdown-toggle" href="index.html">
-          <span class="icon-holder">
-            <i class="fa fa-align-left"></i>
-          </span>
-          <span class="title">Tests</span>
-        </a>
-      </li>
-            <li class="nav-item dropdown" onclick="toggleView('tag-view')">
-        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
-          <span class="icon-holder">
-            <i class="fa fa-tag"></i>
-          </span>
-          <span class="title">Tags</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
-        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
-          <span class="icon-holder">
-            <i class="fa fa-bar-chart"></i>
-          </span>
-          <span class="title">Dashboard</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>            <div class="vcontainer">
-                <div class="main-content">
-<div class="test-wrapper row test-view">
-	<div class="test-list">
-		<div class="test-list-tools">
-			<ul class="tools pull-left">
-				<li>
-					<a href="">
-					<span class="font-size-14">Tests</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="tools text-right">
-				<li class="user-profile dropdown dropdown-animated scale-left">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					<i class="fa fa-exclamation-circle"></i>
-					</a>
-					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
-						
-						
-						
-						
-						
-						<div class="dropdown-divider"></div>
-						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
-					</ul>
-				</li>
-				<li class="user-profile dropdown dropdown-animated scale-left">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					<i class="fa fa-tag"></i>
-					</a>
-					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" href="#">WEB</a>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		<div class="test-list-wrapper scrollable">
-			<ul class="test-list-item">
-				<li class="test-item"  status="pass" test-id="1"
-					author=""
-					tag="WEB"
-					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">[WEB] Registration Form</p>
-							<p class="duration text-sm">0h 0m 8s+952ms</p>
-							<span class="datetime">08:47:29 AM</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-pass">[WEB] Registration Form</h5>
-									<span class='badge badge-success'>10.14.2025 08:47:29</span>
-									<span class='badge badge-danger'>10.14.2025 08:47:38</span>
-									<span class='badge badge-default'>0h 0m 8s+952ms</span>
-								</div>
-								<div class="m-t-15">
-			<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> WEB</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-<div class="detail-body mt-4">                                              
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">WEB</a><a class="dropdown-item" href="#">API</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[POST] Add New Book</p>
+            <p class="text-sm">
+              <span>2:51:46 PM</span> / <span>00:00:00:939</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[POST] Add New Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:46 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:939</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
 <table class="table table-sm">
-	<thead><tr>
-		<th class="status-col">Status</th>
-		<th class="timestamp-col">Timestamp</th>
-		<th class="details-col">Details</th>
-	</tr></thead>
-	<tbody>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>8:47:38 AM</td>
-				<td>
-						<b><font color=green><pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br><a href='data.xlsx'>Test Data</a></br><center><b>Test Case</center></b></br></br>1. Open https://demoqa.com/automation-practice-form</br>2. Enter all mandatory details</br>3. Submit form</br>4. Wait for modal dialog to be displayed and verify that all data was successfully submitted</pre></font></b>
-						<img class='r-img' onerror='this.style.display="none"' data-featherlight='.\test-output\screenshots\Tue_Oct_14_08_47_38_EEST_2025.png' src='.\test-output\screenshots\Tue_Oct_14_08_47_38_EEST_2025.png'>
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>8:47:38 AM</td>
-				<td>
-						
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>8:47:38 AM</td>
-				<td>
-						
-				</td>
-			</tr>
-	</tbody>
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	POST
+Request URI:	http://localhost:9000/api/books
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "Id": 1,
+    "Author": "Anonymous",
+    "Title": "New Book",
+    "Description": "Horror"
+}
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 200 OK
+Content-Length: 64
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+{
+    "Id": 1,
+    "Title": "New Book",
+    "Description": "Horror",
+    "Author": null
+}
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
 </table>
 </div>
-<div class="detail-foot">
-	<ul class="attachments">
-			<img class='r-img' onerror='this.style.display="none"' data-featherlight='com.aventstack.extentreports.MediaEntityBuilder@1c57f6b2' src='com.aventstack.extentreports.MediaEntityBuilder@1c57f6b2'>
-			<img class='r-img' onerror='this.style.display="none"' data-featherlight='.\test-output\screenshots\Tue_Oct_14_08_47_38_EEST_2025.png' src='.\test-output\screenshots\Tue_Oct_14_08_47_38_EEST_2025.png'>
-	</ul>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[POST] Add New Book With Incorrect Data</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:024</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[POST] Add New Book With Incorrect Data</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:024</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="test-content scrollable">
-		<div class="test-content-tools">
-			<ul>
-				<li>
-					<a class="back-to-test" href="javascript:void(0)">
-					<i class="fa fa-arrow-left"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-content-detail">
-			<div class="detail-body"></div>
-		</div>
-	</div>
-</div><div class="test-wrapper row tag-view attributes-view">
-	<div class="test-list">
-		<div class="test-list-tools">
-			<ul class="tools pull-left">
-				<li>
-					<a href="">
-					<span class="font-size-14">Tags</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="tools text-right">
-				<li>
-					<a href="#">
-					<span class="badge badge-primary">1</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-list-wrapper scrollable">
-			<ul class="test-list-item">
-				<li class="test-item">
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">WEB</p>
-							<p class="duration text-sm">1 tests</p>
-							<span class="datetime">
-							<span class='badge badge-success'>1</span>
-							
-							
-							
-							</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="info">
-							<h4>WEB</h4>
-							<span status="pass" class='badge badge-success'>1 passed</span>
-							
-							
-							
-						</div>
-						<table class='table table-sm mt-4'>
-							<thead>
-								<tr>
-									<th class="status-col">Status</th>
-									<th class="timestamp-col">Timestamp</th>
-									<th>TestName</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="tag-test-status" status="pass">
-									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
-										</div>
-									</td>
-									<td>08:47:29 AM</td>
-									<td class='linked' test-id='1'>
-										[WEB] Registration Form
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="test-content scrollable">
-		<div class="test-content-tools">
-			<ul>
-				<li>
-					<a class="back-to-test" href="javascript:void(0)">
-					<i class="fa fa-arrow-left"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-content-detail">
-			<div class="detail-body"></div>
-		</div>
-	</div>
-</div>                    <!-- dashboard -->
-<div class="container-fluid p-4 dashboard-view">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-header">
-					<h6 class="card-title">Tests</h6>
-				</div>
-				<div class="card-body">
-					<div class="">
-						<canvas id='parent-analysis' width='115' height='90'></canvas>
-					</div>
-				</div>
-				<div class="card-footer">
-					<div><small data-tooltip='100%'>
-						<b>1</b> tests passed
-						</small>
-					</div>
-					<div>
-						<small data-tooltip='0%'><b>0</b> tests failed, 
-						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
-						</small>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-header">
-					<h6 class="card-title">Log events</h6>
-				</div>
-				<div class="card-body">
-					<div class="">
-						<canvas id='events-analysis' width='115' height='90'></canvas>
-					</div>
-				</div>
-				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>3</b> events passed</small></div>
-					<div>
-						<small data-tooltip='0%'><b>0</b> events failed, 
-						<b data-tooltip='0%'>0</b> others
-						</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3">
-			<div class="card">
-				<div class="card-body box-height-150">
-					<div class="media justify-content-between">
-						<div class="card-header">
-							<h6 class="card-title">Tests</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
-							<span class="text-semibold text-success font-size-15">
-							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
-							</span>
-						</div>
-						<div class="align-self-end">
-							<i class="fa fa-align-left font-size-70 opacity-01"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="card">
-				<div class="card-body box-height-150">
-					<div class="media justify-content-between">
-						<div class="card-header">
-							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Oct 14, 2025 08:47:21 AM</h4>
-							<span class="text-semibold text-success font-size-15">
-						</div>
-						<div class="align-self-end">
-							<i class="fa fa-clock-o font-size-70 text-success opacity-01"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="card">
-				<div class="card-body box-height-150">
-					<div class="media justify-content-between">
-						<div class="card-header">
-							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 17s+123ms</h4>
-							<span class="text-semibold font-size-15">
-						</div>
-						<div class="align-self-end">
-							<i class="fa fa-clock-o font-size-70 opacity-01"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="card">
-				<div class="card-header">
-					<h6 class="card-title">Timeline</h6>
-				</div>
-				<div class="card-body">
-					<div class="">
-						<canvas id="timeline" height="120"></canvas>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="card">
-				<div class="card-header">
-					<h6 class="card-title">Tags</h6>
-				</div>
-				<div class="table-overflow">
-					<table class="table table-sm">
-						<thead>
-							<tr class="bg-gray">
-								<th>Name</th>
-								<th>Passed</th>
-								<th>Failed</th>
-								<th>Skipped</th>
-								<th>Others</th>
-								<th>Passed %</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>WEB</td>
-								<td>1</td>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-								<td>
-									100%
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card">
-				<div class="card-header">
-					<h6 class="card-title">Environment</h6>
-				</div>
-				<div class="table-overflow">
-					<table class="table table-sm">
-						<thead>
-							<tr class="bg-gray">
-								<th>Name</th>
-								<th>Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Operating System</td>
-								<td>Windows 11</td>
-							</tr>
-							<tr>
-								<td>User Name</td>
-								<td>KamboJah</td>
-							</tr>
-							<tr>
-								<td>Environemnt</td>
-								<td>QA</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
 </div>
-<script>
-	var statusGroup = {
-	    parentCount: 1,
-		passParent: 1,
-		failParent: 0,
-		fatalParent: 0,
-		errorParent: 0,
-		warningParent: 0,
-		skipParent: 0,
-		exceptionsParent: 0,
-		childCount: 0,
-		passChild: 0,
-		failChild: 0,
-		fatalChild: 0,
-		errorChild: 0,
-		warningChild: 0,
-		skipChild: 0,
-		infoChild: 0,
-		debugChild: 0,
-		exceptionsChild: 0,
-		grandChildCount: 0,
-		passGrandChild: 0,
-		failGrandChild: 0,
-		fatalGrandChild: 0,
-		errorGrandChild: 0,
-		warningGrandChild: 0,
-		skipGrandChild: 0,
-		infoGrandChild: 0,
-		debugGrandChild: 0,
-		exceptionsGrandChild: 0,
-		eventsCount: 3,
-		passEvents: 3,
-		failEvents: 0,
-		fatalEvents: 0,
-		errorEvents: 0,
-		warningEvents: 0,
-		skipEvents: 0,
-		infoEvents: 0,
-		debugEvents: 0,
-		exceptionsEvents: 0
-	};
-</script>
-<script>
-	var timeline = {
-	        "[WEB] Registration Form":8.952
-	};
-</script>
-                </div>
-            </div>
-        </div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	POST
+Request URI:	http://localhost:9000/api/books
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "Id": 0,
+    "Author": "Anonymous",
+    "Title": "",
+    "Description": "Horror"
+}
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 400 Bad Request
+Content-Length: 78
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+{
+    "Message": "Book.Id should be a positive integer!\r\nParameter name: book.Id"
+}
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[GET] List All Books</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:056</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[GET] List All Books</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:056</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	GET
+Request URI:	http://localhost:9000/api/books?title=
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 200 OK
+Content-Length: 66
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+[
+    {
+        "Id": 1,
+        "Title": "New Book",
+        "Description": "Horror",
+        "Author": null
+    }
+]
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[GET] List Single Book</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:012</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[GET] List Single Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:012</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	GET
+Request URI:	http://localhost:9000/api/books?title=
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 200 OK
+Content-Length: 66
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+[
+    {
+        "Id": 1,
+        "Title": "New Book",
+        "Description": "Horror",
+        "Author": null
+    }
+]
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[PUT] Update Book</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:012</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[PUT] Update Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:012</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	PUT
+Request URI:	http://localhost:9000/api/books/1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "Id": 1,
+    "Author": "Updated Author",
+    "Title": "Updated Book Title",
+    "Description": "Updated Description"
+}
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 200 OK
+Content-Length: 99
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+{
+    "Id": 1,
+    "Title": "Updated Book Title",
+    "Description": "Updated Description",
+    "Author": "Updated Author"
+}
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[PUT] Update Non Existing Book</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:013</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[PUT] Update Non Existing Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:013</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	PUT
+Request URI:	http://localhost:9000/api/books/666
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "Id": 666,
+    "Author": "Updated Author",
+    "Title": "Updated Book Title",
+    "Description": "Updated Description"
+}
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 404 Not Found
+Content-Length: 41
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+{
+    "Message": "Book with id 666 not found!"
+}
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[DELETE] Remove Book</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:013</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[DELETE] Remove Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:013</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	DELETE
+Request URI:	http://localhost:9000/api/books/1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 204 No Content
+Content-Length: 0
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag="API"
+          device="">
+          <div class="test-detail">
+            <p class="name">[DELETE] Remove Non Existing Book</p>
+            <p class="text-sm">
+              <span>2:51:47 PM</span> / <span>00:00:00:009</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[DELETE] Remove Non Existing Book</h5>
+<span class='badge badge-success'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:47 PM</span>
+<span class='badge badge-default'>00:00:00:009</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">API</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>Request method:	DELETE
+Request URI:	http://localhost:9000/api/books/666
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+</br></pre>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:47 PM</td>
+        <td>
+          <pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>HTTP/1.1 404 Not Found
+Content-Length: 41
+Content-Type: application/json; charset=utf-8
+Server: Microsoft-HTTPAPI/2.0
+Date: Fri, 17 Oct 2025 11:51:46 GMT
+
+{
+    "Message": "Book with id 666 not found!"
+}
+</br></pre>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag="WEB"
+          device="">
+          <div class="test-detail">
+            <p class="name">[WEB] Registration Form</p>
+            <p class="text-sm">
+              <span>2:51:48 PM</span> / <span>00:00:08:708</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">[WEB] Registration Form</h5>
+<span class='badge badge-success'>10.17.2025 2:51:48 PM</span>
+<span class='badge badge-danger'>10.17.2025 2:51:56 PM</span>
+<span class='badge badge-default'>00:00:08:708</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WEB</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='com.aventstack.extentreports.MediaEntityBuilder@4ba13fed' src="com.aventstack.extentreports.MediaEntityBuilder@4ba13fed">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='..\test-output\screenshots\Fri_Oct_17_14_51_56_EEST_2025.png' src="..\test-output\screenshots\Fri_Oct_17_14_51_56_EEST_2025.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:56 PM</td>
+        <td>
+          <b><font color=green><pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br><a href='data.xlsx'>Test Data</a></br><center><b>Test Case</center></b></br></br>1. Open https://demoqa.com/automation-practice-form</br>2. Enter all mandatory details</br>3. Submit form</br>4. Wait for modal dialog to be displayed and verify that all data was successfully submitted</pre></font></b>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='..\test-output\screenshots\Fri_Oct_17_14_51_56_EEST_2025.png' src="..\test-output\screenshots\Fri_Oct_17_14_51_56_EEST_2025.png">
+  
+    
+
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:56 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:51:56 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ac7abbc71b4bb073da00153a5a3fdbcfe0c95e2a/spark/js/spark-script.js"></script>
-<script type="text/javascript">
-
-
-</script></body>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">WEB</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WEB</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>[WEB] Registration Form</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>8</span>
+</span>
+<p class="name">API</p>
+<p class="duration text-sm">8 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>API</h4>
+<span status="pass" class='badge log pass-bg'>8 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>[POST] Add New Book</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>[POST] Add New Book With Incorrect Data</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>[GET] List All Books</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>[GET] List Single Book</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>[PUT] Update Book</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>[PUT] Update Non Existing Book</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>[DELETE] Remove Book</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:51:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>[DELETE] Remove Non Existing Book</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Oct 17, 2025 02:51:38 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Oct 17, 2025 02:51:56 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>9</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>9</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='57%'><b>11</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>8</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"[POST] Add New Book":0.939,"[POST] Add New Book With Incorrect Data":0.024,"[GET] List All Books":0.056,"[GET] List Single Book":0.012,"[PUT] Update Book":0.012,"[PUT] Update Non Existing Book":0.013,"[DELETE] Remove Book":0.013,"[DELETE] Remove Non Existing Book":0.009,"[WEB] Registration Form":8.708
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>WEB</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>API</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>KamboJah</td>
+</tr>
+<tr>
+<td>Environemnt</td>
+<td>QA</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 9,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 11,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 8
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
 </html>

@@ -1,7 +1,6 @@
 package config;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentAventReporter;
 import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Protocol;
@@ -30,7 +29,6 @@ public class ExtentManager {
         sparkReporter.config().setDocumentTitle("Automation Report"); // Title of report
         sparkReporter.config().setReportName("Automation Report"); // name of the report
         sparkReporter.config().setTheme(Theme.STANDARD);
-        sparkReporter.config().enableTimeline(true);
         sparkReporter.config().setEncoding("utf-8");
         sparkReporter.config().setProtocol(Protocol.HTTPS);
 

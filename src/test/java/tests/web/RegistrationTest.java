@@ -20,7 +20,6 @@ import static org.demo.ScreenshotUtil.takeScreenshot;
 @Listeners(ExtentTestNGListener.class)
 public class RegistrationTest extends BaseTest {
 
-    private WebDriver driver;
     private RegistrationPage form;
     private Constants constants;
 
@@ -28,8 +27,6 @@ public class RegistrationTest extends BaseTest {
 
     @BeforeClass
     public void init() throws InterruptedException, IOException, ParseException {
-        driver = setupDriver("chrome");
-        Thread.sleep(3000);
         form = new RegistrationPage(driver);
 
         constants = new Constants();

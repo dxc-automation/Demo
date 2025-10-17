@@ -5,6 +5,7 @@ import config.ExtentTestNGListener;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import scripts.Books;
@@ -22,11 +23,12 @@ public class BookTests extends BaseTest {
     private Books.Data data = new Books.Data();
 
 
-    @BeforeClass
-    public void init() throws IOException {
+    @BeforeSuite
+    public void init() throws IOException, InterruptedException {
         System.setProperty("java.awt.headless", "false");
         desktop = Desktop.getDesktop();
         desktop.open(new File(path));
+        Thread.sleep(3000);
     }
 
 

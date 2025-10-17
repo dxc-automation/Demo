@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <testng.version>7.11.0</testng.version>
-        <selenium.version>4.8.2</selenium.version>
+        <selenium.version>4.35.0</selenium.version>
         <webdriver.manager.version>5.5.3</webdriver.manager.version>
         <lombok.version>1.18.32</lombok.version>
         <poi.version>5.4.0</poi.version>

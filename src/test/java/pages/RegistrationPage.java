@@ -1,5 +1,6 @@
 package pages;
 
+import config.BaseTest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+
+import static config.BaseTest.driver;
 
 public class RegistrationPage {
 

@@ -18,7 +18,7 @@ public class ScreenshotUtil {
 
     public static String takeScreenshot(WebDriver driver, String testName) {
         String timestamp = new SimpleDateFormat("dd_HH_mm_ss").format(new Date());
-        String fileName = "test-output/screenshots/" + testName + "_" + timestamp + ".png";
+        String fileName = "../test-output/screenshots/" + testName + "_" + timestamp + ".png";
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         File destination = new File(fileName);
         destination.getParentFile().mkdirs(); // Ensure the folder exists
@@ -35,7 +35,7 @@ public class ScreenshotUtil {
     public static String screenshot(WebDriver driver, String name) {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String fileName = "test-output/screenshots/" + name + ".png";
+        String fileName = "../test-output/screenshots/" + name + ".png";
         File destination = new File(fileName);
         destination.getParentFile().mkdirs(); // create dirs if not exists
         if (fileName != null) {
