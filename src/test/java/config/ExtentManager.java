@@ -49,7 +49,7 @@ public class ExtentManager {
         {
             Date d = new Date();
             String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".png";
-            screenshotName = new File("/test-output/screenshots/" + screenshotFile);
+            screenshotName = new File("./test-output/screenshots/" + screenshotFile);
             FileUtils.copyFile(src, screenshotName);
             System.out.println("Successfully captured a screenshot");
         } catch (IOException e) {
