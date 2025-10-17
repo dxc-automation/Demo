@@ -110,7 +110,7 @@ public class ExtentTestNGListener implements ITestListener {
             try {
                 ExtentManager.captureScreenshot();
                 testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>",
-                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.getAbsolutePath()).build());
+                        MediaEntityBuilder.createScreenCaptureFromPath("." + ExtentManager.screenshotName.getAbsolutePath()).build());
             } catch (Exception e) {
 
             }
