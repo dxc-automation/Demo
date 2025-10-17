@@ -7,23 +7,16 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import org.demo.ScreenshotUtil;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringWriter;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
 
-import static config.BaseTest.driver;
 import static org.demo.ScreenshotUtil.*;
 
 public class ExtentTestNGListener implements ITestListener {
@@ -110,7 +103,7 @@ public class ExtentTestNGListener implements ITestListener {
             try {
                 ExtentManager.captureScreenshot();
                 testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>",
-                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.getAbsolutePath()).build());
+                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotFile).build());
             } catch (Exception e) {
 
             }
@@ -136,7 +129,7 @@ public class ExtentTestNGListener implements ITestListener {
             try {
                 ExtentManager.captureScreenshot();
                 testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
-                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName.toString()).build());
+                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotFile.toString()).build());
             } catch (Exception e) {
 
             }

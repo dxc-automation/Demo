@@ -1,7 +1,6 @@
 package config;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Protocol;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -18,7 +17,7 @@ import static config.BaseTest.driver;
 public class ExtentManager {
 
     private static ExtentReports extent;
-    public static File screenshotName;
+    public static String screenshotFile;
 
 
     public synchronized static ExtentReports getInstance() {
@@ -41,20 +40,21 @@ public class ExtentManager {
         return extent;
     }
 
-    public static File captureScreenshot() {
-        TakesScreenshot screenshot = (TakesScreenshot)driver;
-        // Call method to capture screenshot
-        File src = screenshot.getScreenshotAs(OutputType.FILE);
+    public static String captureScreenshot() {
         try
         {
             Date d = new Date();
-            String screenshotFile = d.toString().replace(":", "_").replace(" ", "_") + ".png";
-            screenshotName = new File("./test-output/screenshots/" + screenshotFile);
-            FileUtils.copyFile(src, screenshotName);
+            String screenshotFileName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
+
+            File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            File destination = new File("./test-output/screenshots/" + screenshotFileName);
+            screenshotFile = destination.getAbsolutePath();
+
+            FileUtils.copyFile(source, destination);
             System.out.println("Successfully captured a screenshot");
         } catch (IOException e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
         }
-        return screenshotName;
+        return screenshotFile;
     }
 }
