@@ -47,7 +47,7 @@ public class ExtentManager {
             String screenshotFileName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
 
             File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            File destination = new File("./test-output/screenshots/" + screenshotFileName);
+            File destination = new File("/test-output/screenshots/" + screenshotFileName);
             screenshotFile = destination.getAbsolutePath();
 
             FileUtils.copyFile(source, destination);

@@ -63,7 +63,6 @@ public class RegistrationTest extends BaseTest {
         Assert.assertTrue(form.modalContainsText(constants.getSecondHobby()));
         Assert.assertTrue(form.modalContainsText(constants.getAddress()));
 
-        screenshotName = takeScreenshot(driver, "screen");
         form.closeModal();
 
         testPassDetails = "<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"
