@@ -7,6 +7,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,20 +43,18 @@ public class ExtentManager {
     }
 
     public static String captureScreenshot() {
-        try
-        {
-            Date d = new Date();
-            String screenshotFileName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
-
-            File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            File destination = new File("test-output/screenshots/" + screenshotFileName);
-            screenshotFile = root + File.separator + destination.getPath();
-
-            FileUtils.copyFile(source, destination);
-            System.out.println("Successfully captured a screenshot");
-        } catch (IOException e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
+        String screenshotPath = null;
+        try {
+            //take screenshot and save it in a file
+            File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            //copy the file to the required path
+            File destinationFile = new File(System.getProperty("user.dir") + "/test-output/screenshots/" + System.currentTimeMillis() + ".png");
+            FileHandler.copy(sourceFile, destinationFile);
+            String[] relatvePath = destinationFile.toString().split("Report");
+            screenshotPath = ".\\" + relatvePath[1];
+        } catch (Exception e) {
+            System.out.println("Failure to take screenshot " + e);
         }
-        return screenshotFile;
+        return screenshotPath;
     }
 }
