@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Date;
 
 import static config.BaseTest.driver;
+import static config.BaseTest.root;
 
 public class ExtentManager {
 
@@ -47,8 +48,8 @@ public class ExtentManager {
             String screenshotFileName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
 
             File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            File destination = new File("./test-output/screenshots/" + screenshotFileName);
-            screenshotFile = destination.getPath();
+            File destination = new File("test-output/screenshots/" + screenshotFileName);
+            screenshotFile = root + File.separator + destination.getPath();
 
             FileUtils.copyFile(source, destination);
             System.out.println("Successfully captured a screenshot");
