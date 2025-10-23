@@ -7,7 +7,6 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.model.Media;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -18,7 +17,7 @@ import java.io.PrintStream;
 import java.io.StringWriter;
 import java.util.Arrays;
 
-import static org.demo.ScreenshotUtil.*;
+import static utils.ScreenshotUtil.takeScreenshot;
 
 public class ExtentTestNGListener implements ITestListener {
 

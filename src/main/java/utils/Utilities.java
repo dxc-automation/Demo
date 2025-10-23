@@ -1,10 +1,8 @@
-package org.demo;
+package utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 
 import java.io.*;
 import java.nio.file.Files;

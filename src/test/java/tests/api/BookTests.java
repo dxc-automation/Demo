@@ -4,7 +4,6 @@ import config.BaseTest;
 import config.ExtentTestNGListener;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -13,8 +12,6 @@ import scripts.Books;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-
-import static config.ExtentTestNGListener.*;
 
 @Listeners(ExtentTestNGListener.class)
 public class BookTests extends BaseTest {

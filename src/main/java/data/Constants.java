@@ -1,19 +1,27 @@
 package data;
 
-import org.demo.Excel;
-
 import java.io.IOException;
 import java.text.ParseException;
 
-import static org.demo.Excel.readFromExcel;
+import static utils.Excel.readFromExcel;
 
 public class Constants {
+
+    private String deviceUDID;
 
 
     //***   INSTAGRAM
     private String url;
     private String username;
     private String password;
+
+    public void setDeviceUDID(String deviceUDID) {
+        this.deviceUDID = deviceUDID;
+    }
+
+    public String getDeviceUDID() {
+        return deviceUDID;
+    }
 
     public void setUrl(String url) {
         this.url = url;

@@ -4,17 +4,12 @@ package tests.web;
 import config.BaseTest;
 import config.ExtentTestNGListener;
 import data.Constants;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.RegistrationPage;
 
 import java.io.IOException;
 import java.text.ParseException;
-
-import static config.ExtentTestNGListener.*;
-import static org.demo.ScreenshotUtil.screenshot;
-import static org.demo.ScreenshotUtil.takeScreenshot;
 
 
 @Listeners(ExtentTestNGListener.class)
@@ -65,7 +60,7 @@ public class RegistrationTest extends BaseTest {
 
         form.closeModal();
 
-        testPassDetails = "<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"
+        ExtentTestNGListener.testPassDetails = "<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"
                 + "<a href='data.xlsx'>Test Data</a></br>"
                 + "<center><b>Test Case</center></b></br></br>"
                 + "1. Open https://demoqa.com/automation-practice-form</br>"

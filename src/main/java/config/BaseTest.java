@@ -1,31 +1,22 @@
 package config;
 
 import data.Constants;
+import io.appium.java_client.AppiumDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
-import org.demo.ScreenshotUtil;
-import org.demo.Utilities;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import utils.Utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
 import org.testng.annotations.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
-
-import static config.ExtentTestNGListener.testCategory;
 
 
 @Slf4j
@@ -36,12 +27,11 @@ public class BaseTest {
     public  static final  String  path = root + File.separator + "library-manager" + File.separator + "LibraryManager.bat";
 
     public static WebDriver driver;
+    private static AppiumDriver appiumDriver;
     public static Desktop   desktop;
+    private Constants constants = new Constants();
 
     public static String testName = "";
-
-    public static String udid;
-
 
     public static WebDriver setupDriver(String browser) throws InterruptedException {
         try {
@@ -65,9 +55,10 @@ public class BaseTest {
 
 
     @BeforeSuite
-    public void readDevice() throws InterruptedException {
-        udid = System.getProperty("env");
-        System.out.println("UDID: " + udid);
+    public void readDevice() throws InterruptedException, IOException {
+        String udid = System.getProperty("env");
+        constants.setDeviceUDID(udid);
+        System.out.println("UDID: " + constants.getDeviceUDID());
 
         driver = setupDriver("chrome");
     }

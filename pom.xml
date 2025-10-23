@@ -19,9 +19,17 @@
         <lombok.version>1.18.32</lombok.version>
         <poi.version>5.4.0</poi.version>
         <appium.version>10.0.0</appium.version>
+        <apache.commons.version>1.5.0</apache.commons.version>
     </properties>
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-exec -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-exec</artifactId>
+            <version>${apache.commons.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -61,7 +69,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
@@ -89,13 +97,6 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>31.0.1-jre</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>${selenium.version}</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -261,6 +262,19 @@
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>${appium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>6.3.2</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
