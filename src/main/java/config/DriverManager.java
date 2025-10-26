@@ -74,7 +74,7 @@ public class DriverManager {
         options.setCapability("appium:udid", constants.getDeviceUDID());
         options.setCapability("appium:platformName", "Android");
         options.setCapability("appium:automationName", "UiAutomator2");
-        options.setCapability("appium:deviceName", deviceName);
+        options.setCapability("appium:deviceName", constants.getDeviceName());
         options.setCapability("appium:noReset", true);
         options.setCapability("appium:appPackage", "com.android.chrome");
         options.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
