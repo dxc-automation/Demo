@@ -37,7 +37,7 @@ public class BaseTest {
         }
         System.out.println("Device Name: " + constants.getDeviceName());
 
-        String udid = System.getProperty("env");
+        String udid = System.getProperty("udid");
         if (udid != null) {
             constants.setDeviceUDID(udid);
         } else {
