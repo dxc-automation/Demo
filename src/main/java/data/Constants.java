@@ -8,12 +8,21 @@ import static utils.Excel.readFromExcel;
 public class Constants {
 
     private String deviceUDID;
+    private String deviceName;
 
 
     //***   INSTAGRAM
     private String url;
     private String username;
     private String password;
+
+    public String getDeviceName() {
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
 
     public void setDeviceUDID(String deviceUDID) {
         this.deviceUDID = deviceUDID;
@@ -45,12 +54,6 @@ public class Constants {
 
     public String getPassword() {
         return password;
-    }
-
-    public void readInstagramData(int row) throws IOException, ParseException {
-        setUrl(readFromExcel("Instagram", row, 0).toString());
-        setUsername(readFromExcel("Instagram", row, 1).toString());
-        setPassword(readFromExcel("Instagram", row, 2).toString());
     }
 
 

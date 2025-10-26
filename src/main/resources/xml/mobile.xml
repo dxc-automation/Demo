@@ -5,11 +5,11 @@
         <listener class-name="config.ExtentTestNGListener"/>
     </listeners>
 
-    <test name="Books">
+    <test name="Games">
         <classes>
-            <class name="tests.mobile.Test">
+            <class name="tests.mobile.IrishWildsTest">
                 <methods>
-                    <include name="testRegistrationFormSubmission"/>
+                    <include name="irishWildsTest"/>
                 </methods>
             </class>
         </classes>

@@ -2,6 +2,7 @@
 package tests.web;
 
 import config.BaseTest;
+import config.DriverManager;
 import config.ExtentTestNGListener;
 import data.Constants;
 import org.testng.Assert;
@@ -22,7 +23,9 @@ public class RegistrationTest extends BaseTest {
 
     @BeforeClass
     public void init() throws InterruptedException, IOException, ParseException {
-        form = new RegistrationPage(driver);
+        DriverManager.setupSeleniumDriver("chrome");
+
+        form = new RegistrationPage(DriverManager.getSeleniumDriver());
 
         constants = new Constants();
         constants.readTestData("TestData", 1);

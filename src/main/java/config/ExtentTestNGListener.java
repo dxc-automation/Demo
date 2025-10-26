@@ -24,22 +24,23 @@ public class ExtentTestNGListener implements ITestListener {
     private static ExtentReports extent = ExtentManager.getInstance();
     private static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
 
-    public static StringWriter requestWriter  = new StringWriter();
-    public static PrintStream  requestCapture = new PrintStream(new WriterOutputStream(requestWriter), false);
+    public static StringWriter requestWriter = new StringWriter();
+    public static PrintStream requestCapture = new PrintStream(new WriterOutputStream(requestWriter), false);
 
-    public static StringWriter responseWriter  = new StringWriter();
+    public static StringWriter responseWriter = new StringWriter();
     public static PrintStream responseCapture = new PrintStream(new WriterOutputStream(responseWriter), false);
 
     private static String log;
     private static String responseLog;
     private static String requestLog;
-    public  static String testCategory;
-    public  static String testPassDetails;
-    public  static String screenshotName;
+    public static String testCategory;
+    public static String testPassDetails;
+    public static String screenshotName;
 
     public static void setRequestLog(String newRequestLog) {
         requestLog = newRequestLog;
     }
+
     public static String getRequestLog() {
         return requestLog;
     }
@@ -95,16 +96,18 @@ public class ExtentTestNGListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         testThread.get().assignCategory(testCategory);
-
-        if (testCategory.equalsIgnoreCase("API")) {
-            testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
-            testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
-        } else if (testCategory.equalsIgnoreCase("WEB")) {
-            try {
-                testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>",MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot()).build());
-            } catch (Exception e) {
-
-            }
+        switch (testCategory) {
+            case "API":
+                testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>" + getRequestLog() + "</br></pre>");
+                testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
+                break;
+            case "WEB", "MOBILE":
+                if (testCategory.equalsIgnoreCase("WEB")) {
+                    testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver())).build());
+                } else {
+                    testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getAppiumDriver())).build());
+                }
+                break;
         }
     }
 
@@ -113,40 +116,41 @@ public class ExtentTestNGListener implements ITestListener {
         Throwable throwable = result.getThrowable();
         testThread.get().assignCategory(testCategory);
 
-        String failureLogg="TEST CASE FAILED";
+        String failureLogg = "TEST CASE FAILED";
         Markup markup = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
         testThread.get().log(Status.FAIL, markup);
 
-        if (testCategory.equalsIgnoreCase("API")) {
-            testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>"   + getRequestLog() + "</br></pre>");
-            testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
-        } else if(testCategory.equalsIgnoreCase("WEB")) {
-            String excepionMessage = Arrays.toString(result.getThrowable().getStackTrace());
-            testThread.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
-                    + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>"+" \n");
-            try {
-                ExtentManager.captureScreenshot();
-                testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
-                        MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotFile.toString()).build());
-            } catch (Exception e) {
-
-            }
-        }
-
-
-        Object testInstance = result.getInstance();
-        try {
-
-            java.lang.reflect.Method m = testInstance.getClass().getMethod("getDriver");
-            Object driver = m.invoke(testInstance);
-            if (driver != null) {
-                screenshotName = takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
-                testThread.get().addScreenCaptureFromPath(screenshotName, "Failed Screenshot");
-            }
-        } catch (NoSuchMethodException e) {
-            // няма getDriver - игнорирай или логни
-        } catch (Exception e) {
-            e.printStackTrace();
+        switch (testCategory) {
+            case "API":
+                testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>" + getRequestLog() + "</br></pre>");
+                testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
+                break;
+            case "WEB", "MOBILE":
+                String excepionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+                testThread.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
+                        + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
+                try {
+                    if (testCategory.equalsIgnoreCase("WEB")) {
+                        ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver());
+                        testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver()).toString()).build());
+                    } else {
+                        ExtentManager.captureScreenshot(DriverManager.getAppiumDriver());
+                        testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getAppiumDriver()).toString()).build());
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                Object testInstance = result.getInstance();
+                try {
+                    java.lang.reflect.Method m = testInstance.getClass().getMethod("getDriver");
+                    Object driver = m.invoke(testInstance);
+                    if (driver != null) {
+                        screenshotName = takeScreenshot((org.openqa.selenium.WebDriver) driver, result.getMethod().getMethodName());
+                        testThread.get().addScreenCaptureFromPath(screenshotName, "Failed Screenshot");
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());                }
+                break;
         }
     }
 

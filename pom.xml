@@ -303,6 +303,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <forkCount>0</forkCount>
                     <suiteXmlFiles>
                         <!-- pass testng.xml files as argument from command line -->
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>

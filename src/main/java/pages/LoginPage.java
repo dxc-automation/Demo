@@ -7,10 +7,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static config.BaseTest.driver;
-
 public class LoginPage {
 
+    private WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
 
@@ -23,7 +22,7 @@ public class LoginPage {
 
 
     public LoginPage(WebDriver driver) {
-        BaseTest.driver = driver;
+        this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.js = (JavascriptExecutor) driver;
     }

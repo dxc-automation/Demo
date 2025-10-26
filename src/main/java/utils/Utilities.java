@@ -16,11 +16,6 @@ import java.util.zip.ZipOutputStream;
 
 public class Utilities {
 
-
-
-
-
-
     public static String getFormattedJson(JsonObject object) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
