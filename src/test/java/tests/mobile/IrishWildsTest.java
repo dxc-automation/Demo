@@ -5,8 +5,10 @@ import config.Appium;
 import config.BaseTest;
 import config.ExtentTestNGListener;
 import data.Constants;
+import data.Endpoints;
 import io.appium.java_client.AppiumDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import pages.RegistrationPage;
@@ -30,13 +32,14 @@ public class Test extends BaseTest {
         constants = new Constants();
         constants.readTestData("TestData", 1);
         Appium.startServer();
+        Appium.startEmulator();
         appiumDriver = Appium.initAppium();
     }
 
 
     @org.testng.annotations.Test(testName = "[WEB] Registration Form", description = "WEB")
     public void testRegistrationFormSubmission() throws Exception {
-        appiumDriver.get("https://demoqa.com/automation-practice-form");
+        appiumDriver.get(Endpoints.irish_wilds);
 
         ExtentTestNGListener.testPassDetails = "<pre><center><b>* * * * * * * *    User Registration Form    * * * * * * * *</b></center></br></br>"
                 + "<a href='data.xlsx'>Test Data</a></br>"
