@@ -57,7 +57,7 @@ public class AndroidDriverManager {
                 UiAutomator2Options options = new UiAutomator2Options();
                 options.setPlatformName("Android");
                 options.setUdid(constants.getDeviceUDID());
-                options.setDeviceName("Nexus_4");
+                options.setDeviceName(constants.getDeviceName());
                 options.setCapability("browserName", "Chrome");
 
                 driver = new AppiumDriver(new URL("http://127.0.0.1:4723/"), options);

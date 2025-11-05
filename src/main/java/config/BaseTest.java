@@ -28,7 +28,7 @@ public class BaseTest {
 
     @BeforeSuite
     @Parameters({"deviceName", "deviceUDID"})
-    public void readDevice(@Optional("Nexus_4") String deviceName, @Optional("192.168.127.101:5555") String deviceUDID) throws InterruptedException, IOException {
+    public void readDevice(@Optional("Nexus") String deviceName, @Optional("127.0.0.1:6555") String deviceUDID) throws InterruptedException, IOException {
         String name = System.getProperty("name");
         if (name != null) {
             constants.setDeviceName(name);
