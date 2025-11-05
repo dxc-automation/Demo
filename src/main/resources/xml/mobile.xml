@@ -9,7 +9,11 @@
         <classes>
             <class name="tests.mobile.IrishWildsMobileTest">
                 <methods>
-                    <include name="irishWildsTest"/>
+                    <include name="balanceUpdateAfterSpin"/>
+                    <include name="balanceUpdateAfterWin"/>
+                    <include name="spinWithDecreasedStake"/>
+                    <include name="spinWithIncreasedStake"/>
+                    <include name="checkAmountsAfterRefresh"/>
                 </methods>
             </class>
         </classes>
