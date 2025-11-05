@@ -7,7 +7,7 @@
 
     <test name="Books">
         <classes>
-            <class name="tests.api.BookTests">
+            <class name="tests.api.BookAPITests">
                 <methods>
                     <include name="addNewBook"/>
                     <include name="addNewBookWithIncorrectData"/>
@@ -24,7 +24,7 @@
 
        <test name="Registration">
         <classes>
-            <class name="tests.web.RegistrationTest">
+            <class name="tests.web.RegistrationWebTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
                 </methods>

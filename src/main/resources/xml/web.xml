@@ -8,7 +8,7 @@
 
     <test name="Registration">
         <classes>
-            <class name="tests.web.RegistrationTest">
+            <class name="tests.web.RegistrationWebTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
                 </methods>
