@@ -16,6 +16,7 @@ import java.util.zip.ZipOutputStream;
 
 public class Utilities {
 
+
     public static String getFormattedJson(JsonObject object) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -37,7 +38,6 @@ public class Utilities {
 
 
     public static void zip(String sourceDirPath, String zipFilePath) throws IOException {
-
         Path p = Files.createFile(Paths.get(zipFilePath));
         try (ZipOutputStream zs = new ZipOutputStream(Files.newOutputStream(p))) {
             Path pp = Paths.get(sourceDirPath);

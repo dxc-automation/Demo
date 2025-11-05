@@ -3,10 +3,8 @@ package config;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.Markup;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
+import config.drivers.AndroidDriverManager;
+import config.drivers.SeleniumDriverManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -34,7 +32,7 @@ public class ExtentTestNGListener implements ITestListener {
     private static String responseLog;
     private static String requestLog;
     public static String testCategory;
-    public static String testPassDetails;
+    public static String testDetails;
     public static String screenshotName;
 
     public static void setRequestLog(String newRequestLog) {
@@ -67,7 +65,6 @@ public class ExtentTestNGListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        // optional: може да се добави настройка тук
     }
 
     @Override
@@ -103,9 +100,9 @@ public class ExtentTestNGListener implements ITestListener {
                 break;
             case "WEB", "MOBILE":
                 if (testCategory.equalsIgnoreCase("WEB")) {
-                    testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver())).build());
+                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver())).build());
                 } else {
-                    testThread.get().pass("<b>" + "<font color=" + "green>" + testPassDetails + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getAppiumDriver())).build());
+                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(BaseTest.appiumDriver)).build());
                 }
                 break;
         }
@@ -116,26 +113,24 @@ public class ExtentTestNGListener implements ITestListener {
         Throwable throwable = result.getThrowable();
         testThread.get().assignCategory(testCategory);
 
-        String failureLogg = "TEST CASE FAILED";
-        Markup markup = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
-        testThread.get().log(Status.FAIL, markup);
-
         switch (testCategory) {
             case "API":
                 testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>" + getRequestLog() + "</br></pre>");
                 testThread.get().fail("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br>" + result.getThrowable().getMessage() + "</br></pre>");
                 break;
             case "WEB", "MOBILE":
+                String exceptionSummary = throwable.getMessage();
                 String excepionMessage = Arrays.toString(result.getThrowable().getStackTrace());
-                testThread.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
-                        + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n");
+
                 try {
                     if (testCategory.equalsIgnoreCase("WEB")) {
-                        ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver());
-                        testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getSeleniumDriver()).toString()).build());
+                        ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver());
+                        testThread.get().fail("<font color=" + "red>" + testDetails + "</br></br>" + exceptionSummary + "</br><details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
+                                + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n" + "<br><br>Screenshot of failure" + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver()).toString()).build());
                     } else {
-                        ExtentManager.captureScreenshot(DriverManager.getAppiumDriver());
-                        testThread.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(DriverManager.getAppiumDriver()).toString()).build());
+                        ExtentManager.captureScreenshot(BaseTest.appiumDriver);
+                        testThread.get().fail("<font color=" + "red>" + testDetails + "</br></br>" + exceptionSummary + "</br><details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
+                                + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n" + "<br><br>Screenshot of failure" + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(BaseTest.appiumDriver).toString()).build());
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());

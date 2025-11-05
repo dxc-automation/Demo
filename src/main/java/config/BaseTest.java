@@ -1,5 +1,7 @@
 package config;
 
+import config.drivers.AndroidDriverManager;
+import config.drivers.SeleniumDriverManager;
 import data.Constants;
 import io.appium.java_client.AppiumDriver;
 import lombok.extern.slf4j.Slf4j;
@@ -19,39 +21,39 @@ public class BaseTest {
     public  static final  String  root = System.getProperty("user.dir");
     public  static final  String  path = root + File.separator + "library-manager" + File.separator + "LibraryManager.bat";
 
-    private static AppiumDriver appiumDriver;
+    protected static AppiumDriver  appiumDriver;
     public static Desktop   desktop;
     public static Constants constants = new Constants();
-
-    public static String testName = "";
 
 
     @BeforeSuite
     @Parameters({"deviceName", "deviceUDID"})
-    public void readDevice(@Optional("Nexus_4") String deviceName, @Optional("192.168.14.104:5555") String deviceUDID) throws InterruptedException, IOException {
+    public void readDevice(@Optional("Nexus_4") String deviceName, @Optional("192.168.127.101:5555") String deviceUDID) throws InterruptedException, IOException {
         String name = System.getProperty("name");
         if (name != null) {
             constants.setDeviceName(name);
+            System.out.println("Detected server device name: " + constants.getDeviceName());
         } else {
             constants.setDeviceName(deviceName);
+            System.out.println("Detected local device name: " + constants.getDeviceName());
         }
-        System.out.println("Device Name: " + constants.getDeviceName());
 
         String udid = System.getProperty("udid");
         if (udid != null) {
             constants.setDeviceUDID(udid);
+            System.out.println("Detected server device udid: " + constants.getDeviceUDID());
         } else {
             constants.setDeviceUDID(deviceUDID);
+            System.out.println("Detected local device udid: " + constants.getDeviceUDID());
         }
-        System.out.println("Device UDID: " + constants.getDeviceUDID());
     }
 
 
     @AfterSuite(alwaysRun = true)
     public void tearDownReport() throws IOException {
-        DriverManager.quitSeleniumDriver();
-        DriverManager.stopAndroidEmulator();
-        DriverManager.stopAppiumServer();
+        SeleniumDriverManager.quitSeleniumDriver();
+        AndroidDriverManager.stopAndroidEmulator();
+        AndroidDriverManager.stopAppiumService();
 
         try {
             Files.createDirectories(Paths.get("test-output-archive"));

@@ -10,11 +10,52 @@ public class Constants {
     private String deviceUDID;
     private String deviceName;
 
+    private String balanceBefore;
+    private String balanceAfter;
+    private String lastWinBefore;
+    private String lastWinAfter;
+    private String stake;
 
-    //***   INSTAGRAM
-    private String url;
-    private String username;
-    private String password;
+
+    public void setBalanceBefore(String balanceBefore) {
+        this.balanceBefore = balanceBefore;
+    }
+
+    public String getBalanceBefore() {
+        return balanceBefore;
+    }
+
+    public void setBalanceAfter(String balanceAfter) {
+        this.balanceAfter = balanceAfter;
+    }
+
+    public String getBalanceAfter() {
+        return balanceAfter;
+    }
+
+    public void setLastWinBefore(String lastWinBefore) {
+        this.lastWinBefore = lastWinBefore;
+    }
+
+    public String getLastWinBefore() {
+        return lastWinBefore;
+    }
+
+    public void setLastWinAfter(String lastWinAfter) {
+        this.lastWinAfter = lastWinAfter;
+    }
+
+    public String getLastWinAfter() {
+        return lastWinAfter;
+    }
+
+    public void setStake(String stake) {
+        this.stake = stake;
+    }
+
+    public String getStake() {
+        return stake;
+    }
 
     public String getDeviceName() {
         return deviceName;
@@ -32,29 +73,7 @@ public class Constants {
         return deviceUDID;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 
 
     //***   REGISTRATION
