@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import config.BaseTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -35,6 +36,7 @@ public class AndroidDriverManager {
         builder = new AppiumServiceBuilder();
         builder.withLogFile(new File("test-output/appium.txt"));
         builder.withIPAddress("127.0.0.1");
+        builder.usingPort(4723);
         builder.usingAnyFreePort();
         builder.withArgument(GeneralServerFlag.BASEPATH, "/wd/hub");
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
@@ -54,13 +56,18 @@ public class AndroidDriverManager {
     public static AppiumDriver getDriver() {
         if (driver == null) {
             try {
-                UiAutomator2Options options = new UiAutomator2Options();
-                options.setPlatformName("Android");
-                options.setUdid(constants.getDeviceUDID());
-                options.setDeviceName(constants.getDeviceName());
-                options.setCapability("browserName", "Chrome");
+                DesiredCapabilities capabilities = new DesiredCapabilities();
+                capabilities.setCapability("appium:udid", constants.getDeviceUDID());
+                capabilities.setCapability("appium:platformName", "Windows");
+                capabilities.setCapability("appium:automationName", "Chromium");
+                capabilities.setCapability("appium:deviceName", constants.getDeviceName());
+                capabilities.setCapability("appium:noReset", true);
+                capabilities.setCapability("appium:browserName", "chrome");
+                //capabilities.setCapability("appium:appPackage", "com.android.chrome");
+                //capabilities.setCapability("appium:appActivity", "com.google.android.apps.chrome.Main");
 
-                driver = new AppiumDriver(new URL("http://127.0.0.1:4723/"), options);
+
+                driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
             } catch (MalformedURLException e) {
                 throw new RuntimeException("Invalid Appium server URL", e);
             }
