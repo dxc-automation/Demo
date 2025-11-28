@@ -9,12 +9,14 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
+import utils.Utilities;
 
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringWriter;
 import java.util.Arrays;
 
+import static config.drivers.SeleniumDriverManager.getSeleniumDriver;
 import static utils.ScreenshotUtil.takeScreenshot;
 
 public class ExtentTestNGListener implements ITestListener {
@@ -70,6 +72,20 @@ public class ExtentTestNGListener implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         extent.flush();
+
+        try {
+            getSeleniumDriver().quit();
+        } catch (Exception e) {
+            System.out.println("Selenium driver was already closed");
+        }
+
+        String source = "C:/Users/KamboJah/AppData/Local/Genymobile/Genymotion/deployed/Google Nexus 4/genymotion-player.log";
+        String destination = "test-output/genymotion-player.log";
+        try {
+            Utilities.copyFile(source, destination);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
@@ -102,7 +118,7 @@ public class ExtentTestNGListener implements ITestListener {
                 if (testCategory.equalsIgnoreCase("WEB")) {
                     testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver())).build());
                 } else {
-                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(BaseTest.appiumDriver)).build());
+                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(AndroidDriverManager.getDriver())).build());
                 }
                 break;
         }
@@ -128,9 +144,9 @@ public class ExtentTestNGListener implements ITestListener {
                         testThread.get().fail("<font color=" + "red>" + testDetails + "</br></br>" + exceptionSummary + "</br><details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
                                 + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n" + "<br><br>Screenshot of failure" + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver()).toString()).build());
                     } else {
-                        ExtentManager.captureScreenshot(BaseTest.appiumDriver);
+                        ExtentManager.captureScreenshot(AndroidDriverManager.getDriver());
                         testThread.get().fail("<font color=" + "red>" + testDetails + "</br></br>" + exceptionSummary + "</br><details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured: Click to see"
-                                + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n" + "<br><br>Screenshot of failure" + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(BaseTest.appiumDriver).toString()).build());
+                                + "</font>" + "</b >" + "</summary>" + excepionMessage.replaceAll(",", "<br>") + "</details>" + " \n" + "<br><br>Screenshot of failure" + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(AndroidDriverManager.getDriver()).toString()).build());
                     }
                 } catch (Exception e) {
                     System.out.println(e.getMessage());

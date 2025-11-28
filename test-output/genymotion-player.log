@@ -1,0 +1,235 @@
+2025-11-12T22:50:34.313 [Genymotion Player:12144] [debug] ==== STARTING PLAYER ====
+2025-11-12T22:50:34.313 [Genymotion Player:12144] [debug] Player version: "3.9.0" 20250507-527a21e90c
+2025-11-12T22:50:34.313 [Genymotion Player:12144] [debug] args: ("C:\\Program Files\\Genymobile\\Genymotion\\player.exe", "--vm-name", "7976a64b-9121-49ef-bdaa-cda863df173c", "--referer", "launchpad")
+2025-11-12T22:50:34.313 [Genymotion Player:12144] [warning] QString::arg: Argument missing: desktop=x86_64 cpu=x86_64 rosetta=0 osimages=x86,x86_64 osname=Windows osversion=Pro, 11.0.0
+2025-11-12T22:50:34.313 [Genymotion Player:12144] [debug] Architecture: "desktop=x86_64 cpu=x86_64 rosetta=0 osimages=x86,x86_64 osname=Windows osversion=Pro"
+2025-11-12T22:50:34.314 [Genymotion Player:12144] [debug] "Local socket created at path: \\\\.\\pipe\\1cd431a13f3bfba035ae0ee846b072d1"
+2025-11-12T22:50:34.315 [Genymotion Player:12144] [debug] No proxy set
+2025-11-12T22:50:34.328 [Genymotion Player:12144] [debug] Host date and time: "13 Nov 2025 00:50:34 +0200"
+2025-11-12T22:50:34.331 [Genymotion Player:12144] [warning] License validity reaches the minimum acceptable value.
+2025-11-12T22:50:34.353 [Genymotion Player:12144] [debug] Execute "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" ("-WindowStyle", "Hidden", "-Command", "Get-CimInstance -ClassName Win32_ComputerSystemProduct | Select-Object -Property UUID")
+2025-11-12T22:50:35.146 [Genymotion Player:12144] [critical] Player may have crashed before.
+2025-11-12T22:50:35.174 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:35.213 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.202 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:36.289 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.292 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:36.333 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.333 [Genymotion Player:12144] [debug] Delete latest snapshot due to crash flag presence
+2025-11-12T22:50:36.333 [Genymotion Player:12144] [debug] "Notifying launchpad of status change: 7976a64b-9121-49ef-bdaa-cda863df173c BOOTING"
+2025-11-12T22:50:36.658 [Genymotion Player:12144] [debug] Progress dialog is visible. devicePixelRatio: 1
+2025-11-12T22:50:36.660 [Genymotion Player:12144] [debug] Device is up to date
+2025-11-12T22:50:36.662 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:36.678 [Genymotion Player:12144] [debug] Trying to log in as "sandboxqa11@gmail.com"
+2025-11-12T22:50:36.678 [Genymotion Player:12144] [debug] POST "https://cloud.genymotion.com/launchpad/login/"
+2025-11-12T22:50:36.712 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.712 [Genymotion Player:12144] [debug] [VMTools] Call: ("guestproperty", "set", "7976a64b-9121-49ef-bdaa-cda863df173c", "androvm_ip_management")
+2025-11-12T22:50:36.757 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.757 [Genymotion Player:12144] [debug] [VMTools] Call: ("modifyvm", "7976a64b-9121-49ef-bdaa-cda863df173c", "--nic1", "hostonly")
+2025-11-12T22:50:36.795 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.795 [Genymotion Player:12144] [debug] [VMTools] Call: ("modifyvm", "7976a64b-9121-49ef-bdaa-cda863df173c", "--hostonlyadapter1", "VirtualBox Host-Only Ethernet Adapter #2")
+2025-11-12T22:50:36.852 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.852 [Genymotion Player:12144] [debug] [VMTools] Call: ("modifyvm", "7976a64b-9121-49ef-bdaa-cda863df173c", "--nictype1", "virtio")
+2025-11-12T22:50:36.902 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.903 [Genymotion Player:12144] [debug] [VMTools] Call: ("modifyvm", "7976a64b-9121-49ef-bdaa-cda863df173c", "--cable-connected1", "on")
+2025-11-12T22:50:36.952 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:36.952 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "Google Nexus 4", "--machinereadable")
+2025-11-12T22:50:37.027 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:37.027 [Genymotion Player:12144] [debug] [VMTools] Call: ("startvm", "7976a64b-9121-49ef-bdaa-cda863df173c", "--type", "headless")
+2025-11-12T22:50:37.762 [Genymotion Player:12144] [debug] "User sandboxqa11@gmail.com logged on Hub"
+2025-11-12T22:50:37.764 [Genymotion Player:12144] [debug] POST "https://cloud.genymotion.com/licenses/activation/"
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [warning] HTTP response is an error
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] HTTP status code: 403, from cache: 0
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] HTTP headers:
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - Date: Wed, 12 Nov 2025 22:50:39 GMT
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - Content-Type: application/json;charset=utf-8
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - Transfer-Encoding: chunked
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - Connection: keep-alive
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - Content-Encoding: gzip
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - vary: Cookie
+2025-11-12T22:50:37.926 [Genymotion Player:12144] [debug] - x-frame-options: DENY
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - x-xss-protection: 1; mode=block
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - set-cookie: genymotion_sessionid=53917c4805335616c139274ee0af20ca; Domain=.genymotion.com; expires=Fri, 14-Nov-2025 22:50:39 GMT; httponly; Max-Age=172800; Path=/; secure
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - access-control-allow-methods: GET, POST, OPTIONS
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - access-control-allow-headers: accept, content-type, X-Requested-With, X-CSRFToken
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - referrer-policy: strict-origin-when-cross-origin
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - cf-cache-status: DYNAMIC
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - Server: cloudflare
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] - CF-RAY: 99d996e92a90d0f2-SOF
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [debug] HTTP content (first 127 bytes): {"code": 1000, "desc": "Activation failed: license have never been registered"}
+2025-11-12T22:50:37.927 [Genymotion Player:12144] [warning] Activation failed. Error: 11 - "HTTP code 403: Activation failed: license have never been registered Error transferring https://cloud.genymotion.com/licenses/activation/ - server replied: FORBIDDEN."
+2025-11-12T22:50:43.634 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:43.634 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:43.708 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:43.709 [Genymotion Player:12144] [debug] Virtual Machine started, waiting for an IP address...
+2025-11-12T22:50:43.709 [Genymotion Player:12144] [debug] [VMTools] Call: ("guestproperty", "get", "7976a64b-9121-49ef-bdaa-cda863df173c", "androvm_ip_management")
+2025-11-12T22:50:43.760 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:43.760 [Genymotion Player:12144] [debug] [VMTools] Call: ("guestproperty", "wait", "7976a64b-9121-49ef-bdaa-cda863df173c", "androvm_ip_management", "--timeout", "25000")
+2025-11-12T22:50:51.551 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:51.551 [Genymotion Player:12144] [debug] [VMTools] Call: ("guestproperty", "get", "7976a64b-9121-49ef-bdaa-cda863df173c", "androvm_ip_management")
+2025-11-12T22:50:51.594 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:51.594 [Genymotion Player:12144] [debug] Boot successful
+2025-11-12T22:50:51.594 [Genymotion Player:12144] [debug] Genymotion system started. Attributed IP address:  "192.168.6.101"
+2025-11-12T22:50:51.607 [Genymotion Player:12144] [debug] register gps status
+2025-11-12T22:50:52.162 [Genymotion Player:12144] [warning] QObject::connect(QQuickWindow, MapView_QMLTYPE_305_QML_367): invalid nullptr parameter
+2025-11-12T22:50:52.209 [Genymotion Player:12144] [debug] "dummy_camera.gif" released by DeviceCameraPipe(0x218c3cedca0) count: 0
+2025-11-12T22:50:52.209 [Genymotion Player:12144] [debug] "dummy_camera.gif" acquired by CameraImageProvider(0x218c8bc0ab0) count: 1
+2025-11-12T22:50:52.217 [Genymotion Player:12144] [debug] "dummy_camera.gif" released by DeviceCameraPipe(0x218c3cecb20) count: 1
+2025-11-12T22:50:52.217 [Genymotion Player:12144] [debug] "dummy_camera.gif" acquired by CameraImageProvider(0x218c8bc0e10) count: 2
+2025-11-12T22:50:52.280 [Genymotion Player:12144] [warning] QPixmap::scaled: Pixmap is a null pixmap
+2025-11-12T22:50:52.510 [Genymotion Player:12144] [debug] GL_VENDOR: "Intel"
+2025-11-12T22:50:52.510 [Genymotion Player:12144] [debug] GL_RENDERER: "Intel(R) Iris(R) Xe Graphics"
+2025-11-12T22:50:52.510 [Genymotion Player:12144] [debug] GL_VERSION: "4.6.0 - Build 32.0.101.7080"
+2025-11-12T22:50:52.510 [Genymotion Player:12144] [debug] GL_SHADING_LANGUAGE_VERSION: "4.60 - Build 32.0.101.7080"
+2025-11-12T22:50:52.624 [Genymotion Player:12144] [debug] "Publisher sensors is not connected"
+2025-11-12T22:50:52.624 [Genymotion Player:12144] [debug] "Publisher sensors is not connected"
+2025-11-12T22:50:52.798 [Genymotion Player:12144] [debug] "Publisher sensors is not connected"
+2025-11-12T22:50:52.798 [Genymotion Player:12144] [debug] "Publisher sensors is not connected"
+2025-11-12T22:50:52.798 [Genymotion Player:12144] [debug] "Publisher sensors is not connected"
+2025-11-12T22:50:52.798 [Genymotion Player:12144] [debug] "Publisher settings is not connected"
+2025-11-12T22:50:52.901 [Genymotion Player:12144] [debug] "subscriber" is connected, context 0x218c3bc64a0
+2025-11-12T22:50:52.901 [Genymotion Player:12144] [debug] "publisher" is connected, context 0x218c3bc4a60
+2025-11-12T22:50:52.918 [Genymotion Player:12144] [debug] Linux/Windows: media permissions are authorized by default
+2025-11-12T22:50:52.924 [Genymotion Player:12144] [debug] Camera "Integrated Camera" detected position QCamera::UnspecifiedPosition orientation 0
+2025-11-12T22:50:52.924 [Genymotion Player:12144] [debug] Camera "Vysor Screen Capture" detected position QCamera::UnspecifiedPosition orientation 0
+2025-11-12T22:50:52.930 [Genymotion Player:12144] [debug] OpenGL connected to: "192.168.6.101" : 25000
+2025-11-12T22:50:52.930 [Genymotion Player:12144] [debug] Port 22468 will be used for OpenGL data connections
+2025-11-12T22:50:52.930 [Genymotion Player:12144] [debug] Player running. Try to show window...
+2025-11-12T22:50:53.265 [Genymotion Player:12144] [debug] [adb][get-state] device not found yet on "192.168.6.101:5555"
+2025-11-12T22:50:53.265 [Genymotion Player:12144] [debug] [adb][connect]  "192.168.6.101:5555"
+2025-11-12T22:50:54.522 [Genymotion Player:12144] [debug] Status ready for network_profile
+2025-11-12T22:50:54.560 [Genymotion Player:12144] [debug] Status ready for settings (daemon)
+2025-11-12T22:50:54.647 [Genymotion Player:12144] [debug] Status ready for vinput
+2025-11-12T22:50:55.326 [Genymotion Player:12144] [debug] [adb][get-state] device not found yet on "192.168.6.101:5555"
+2025-11-12T22:50:55.326 [Genymotion Player:12144] [critical] [AdbReconnect] [error] `adb connect` returns 0 device connected: false
+2025-11-12T22:50:55.458 [Genymotion Player:12144] [debug] Status ready for fingerprint
+2025-11-12T22:50:55.540 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:50:55.540 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:50:55.618 [Genymotion Player:12144] [warning] "Camera Front 192.168.6.101:24810 error: Connection refused (1000) new attempt in %6 ms"
+2025-11-12T22:50:55.629 [Genymotion Player:12144] [warning] "Camera Back 192.168.6.101:24800 error: Connection refused (1000) new attempt in %6 ms"
+2025-11-12T22:50:56.327 [Genymotion Player:12144] [debug] [adb][connect]  "192.168.6.101:5555"
+2025-11-12T22:50:56.402 [Genymotion Player:12144] [debug] [adb][get-state] "192.168.6.101:5555" : "device"
+2025-11-12T22:50:56.402 [Genymotion Player:12144] [debug] [adb][get-state] device found "192.168.6.101:5555"
+2025-11-12T22:50:56.402 [Genymotion Player:12144] [debug] [AdbReconnect] `adb connect` finished successfully
+2025-11-12T22:50:56.402 [Genymotion Player:12144] [debug] Device connected, starting boot watcher
+2025-11-12T22:50:56.403 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:50:56.408 [Genymotion Player:12144] [debug] [adb][logcat] "C:/Users/KamboJah/AppData/Local/Genymobile/Genymotion/deployed/Google Nexus 4/logcat-waExRD.txt" : "192.168.6.101:5555"
+2025-11-12T22:50:56.490 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:50:56.541 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:50:56.541 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:50:56.620 [Genymotion Player:12144] [debug] "Camera Front connected to 192.168.6.101:24810"
+2025-11-12T22:50:56.633 [Genymotion Player:12144] [debug] "Camera Back connected to 192.168.6.101:24800"
+2025-11-12T22:50:57.494 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:50:57.542 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:50:57.542 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:50:57.568 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:50:58.542 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:50:58.542 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:50:58.572 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:50:58.637 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:50:59.545 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:50:59.545 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:50:59.645 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:50:59.719 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:00.546 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:51:00.546 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:00.721 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:00.780 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:01.554 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:01.554 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:51:01.783 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:01.849 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:02.554 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:51:02.554 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:02.851 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:02.903 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:03.555 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:03.555 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:51:03.906 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:03.985 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:04.556 [Genymotion Player:12144] [debug] Ask for gps status
+2025-11-12T22:51:04.556 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:04.557 [Genymotion Player:12144] [debug] Status ready for gps
+2025-11-12T22:51:04.988 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:05.063 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:05.556 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:06.070 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:06.171 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:06.556 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:07.175 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:07.240 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:07.557 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:08.244 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:08.306 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:08.558 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:09.313 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "dev.bootcomplete")
+2025-11-12T22:51:09.419 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "dev.bootcomplete")  - exit code: 0
+2025-11-12T22:51:09.419 [Genymotion Player:12144] [debug] Device booted in 13017 ms
+2025-11-12T22:51:09.419 [Genymotion Player:12144] [debug] "Notifying launchpad of status change: 7976a64b-9121-49ef-bdaa-cda863df173c ON"
+2025-11-12T22:51:09.421 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("pm list packages")
+2025-11-12T22:51:09.421 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "system", "show_touches")
+2025-11-12T22:51:09.553 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "system", "show_touches")  - exit code: 0
+2025-11-12T22:51:09.553 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "system", "pointer_location")
+2025-11-12T22:51:09.809 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "system", "pointer_location")  - exit code: 0
+2025-11-12T22:51:09.809 [Genymotion Player:12144] [debug] [adb][shell] ("pm list packages")  - exit code: 0
+2025-11-12T22:51:09.809 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "global", "window_animation_scale")
+2025-11-12T22:51:10.001 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "global", "window_animation_scale")  - exit code: 0
+2025-11-12T22:51:10.001 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "global", "transition_animation_scale")
+2025-11-12T22:51:10.149 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "global", "transition_animation_scale")  - exit code: 0
+2025-11-12T22:51:10.149 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "global", "animator_duration_scale")
+2025-11-12T22:51:10.334 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "global", "animator_duration_scale")  - exit code: 0
+2025-11-12T22:51:10.334 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("settings", "get", "global", "force_desktop_mode_on_external_displays")
+2025-11-12T22:51:10.751 [Genymotion Player:12144] [debug] [adb][shell] ("settings", "get", "global", "force_desktop_mode_on_external_displays")  - exit code: 0
+2025-11-12T22:51:10.751 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "ro.genyd.caps.dynamicrooting")
+2025-11-12T22:51:10.868 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "ro.genyd.caps.dynamicrooting")  - exit code: 0
+2025-11-12T22:51:10.869 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "persist.debug.layout")
+2025-11-12T22:51:10.938 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "persist.debug.layout")  - exit code: 0
+2025-11-12T22:51:10.938 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "persist.sys.root_access")
+2025-11-12T22:51:10.938 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("setprop", "debug.layout", "0")
+2025-11-12T22:51:11.021 [Genymotion Player:12144] [debug] [adb][shell] ("setprop", "debug.layout", "0")  - exit code: 0
+2025-11-12T22:51:11.021 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("setprop", "persist.debug.layout", "0")
+2025-11-12T22:51:11.049 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "persist.sys.root_access")  - exit code: 0
+2025-11-12T22:51:11.049 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "ro.genyd.caps.dynamicrooting", "off")
+2025-11-12T22:51:11.129 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "ro.genyd.caps.dynamicrooting", "off")  - exit code: 0
+2025-11-12T22:51:11.129 [Genymotion Player:12144] [debug] Status ready for systempatcher
+2025-11-12T22:51:11.136 [Genymotion Player:12144] [debug] Ask for settings (service) answer
+2025-11-12T22:51:11.149 [Genymotion Player:12144] [debug] [adb][shell] ("setprop", "persist.debug.layout", "0")  - exit code: 0
+2025-11-12T22:51:11.149 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("service", "call", "activity", "1599295570")
+2025-11-12T22:51:11.426 [Genymotion Player:12144] [debug] [adb][shell] ("service", "call", "activity", "1599295570")  - exit code: 0
+2025-11-12T22:59:06.180 [Genymotion Player:12144] [debug] [adb][getAdbDevices] ADB device found: "192.168.6.101:5555"
+2025-11-12T22:59:06.180 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "ro.genymotion.version")
+2025-11-12T22:59:06.228 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "ro.genymotion.version")  - exit code: 0
+2025-11-12T22:59:34.760 [Genymotion Player:12144] [info] Exiting
+2025-11-12T22:59:34.777 [Genymotion Player:12144] [debug] [mt] Syncing...
+2025-11-12T22:59:34.779 [Genymotion Player:12144] [debug] POST "https:"
+2025-11-12T22:59:34.974 [Genymotion Player:12144] [warning] [mt][amp] Send request succeeded
+2025-11-12T22:59:34.979 [Genymotion Player:12144] [debug] [mt] Syncing finished
+2025-11-12T22:59:34.983 [Genymotion Player:12144] [debug] [adb][shell] command: "C:/Program Files/Genymobile/Genymotion/tools/adb.exe" -s "192.168.6.101:5555" shell ("getprop", "ro.runtime.firstboot")
+2025-11-12T22:59:35.028 [Genymotion Player:12144] [debug] [adb][shell] ("getprop", "ro.runtime.firstboot")  - exit code: 0
+2025-11-12T22:59:35.028 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:59:35.064 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:59:35.064 [Genymotion Player:12144] [debug] Closing without snapshot saving
+2025-11-12T22:59:35.091 [Genymotion Player:12144] [warning] [AdbReconnect] [logcat] Process exited with result 62097
+2025-11-12T22:59:35.091 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:59:35.127 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:59:35.130 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:59:35.173 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:59:36.173 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:59:36.211 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:59:36.232 [Genymotion Player:12144] [debug] [adb][get-state] "192.168.6.101:5555" : "device"
+2025-11-12T22:59:36.232 [Genymotion Player:12144] [debug] [adb][get-state] device found "192.168.6.101:5555"
+2025-11-12T22:59:36.259 [Genymotion Player:12144] [debug] [adb][disconnect] "192.168.6.101:5555" : disconnected
+2025-11-12T22:59:36.259 [Genymotion Player:12144] [debug] "Notifying launchpad of status change: 7976a64b-9121-49ef-bdaa-cda863df173c OFF"
+2025-11-12T22:59:36.292 [Genymotion Player:12144] [debug] "dummy_camera.gif" released by QObject(0x218c8bc0ab0) count: 1
+2025-11-12T22:59:36.292 [Genymotion Player:12144] [debug] "dummy_camera.gif" released by QObject(0x218c8bc0e10) count: 0
+2025-11-12T22:59:36.376 [Genymotion Player:12144] [warning] "Camera Vysor Screen Capture status: 2"
+2025-11-12T22:59:38.537 [Genymotion Player:12144] [warning] Failed to get the video control
+2025-11-12T22:59:38.538 [Genymotion Player:12144] [warning] failed to find the video proc amp
+2025-11-12T22:59:38.538 [Genymotion Player:12144] [warning] "Camera Vysor Screen Capture status: 4"
+2025-11-12T22:59:38.540 [Genymotion Player:12144] [warning] "Camera Integrated Camera status: 2"
+2025-11-12T22:59:38.833 [Genymotion Player:12144] [warning] "Camera Integrated Camera status: 4"
+2025-11-12T22:59:38.840 [Genymotion Player:12144] [warning] "Camera Back disconnected from 192.168.6.101:24800"
+2025-11-12T22:59:38.840 [Genymotion Player:12144] [warning] "Camera Front disconnected from 192.168.6.101:24810"
+2025-11-12T22:59:38.843 [Genymotion Player:12144] [debug] ==== STOPPING PLAYER ====
+2025-11-12T22:59:38.843 [Genymotion Player:12144] [debug] Exit status: 0 PlayerNS::ExitCode::SUCCESS
+2025-11-12T22:59:38.844 [Genymotion Player:12144] [warning] Failed to connect to VM (TcpStream) for main host connection: "192.168.6.101" : 25000

@@ -13,7 +13,6 @@ public class Endpoints {
     }
 
     public static String getIrishWildsURL() {
-
         String url = "https://d21j22mhfwmuah.cloudfront.net/0Debug/SB_HTML5_IrishWilds94/index.html" +
                 "?gameCode=SB_HTML5_IrishWilds94" +
                 "&token=DEMO_PP_040c4151-fccd-4c1d-a424-029ee0b73" + getRandomNumber() + getRandomNumber() + getRandomNumber() +

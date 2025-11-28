@@ -1,0 +1,1 @@
+"C:\Users\KamboJah\AppData\Local\Android\Sdk\emulator\emulator.exe" -avd Phone

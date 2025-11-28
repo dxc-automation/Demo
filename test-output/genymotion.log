@@ -1,0 +1,223 @@
+2025-11-12T22:50:27.729 [genymotion:14392] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T22:50:27.762 [Genymotion:14392] [debug] ==== STARTING GENYMOTION ====
+2025-11-12T22:50:27.762 [Genymotion:14392] [debug] Genymotion Version: "3.9.0" 20250507-527a21e90c
+2025-11-12T22:50:27.763 [Genymotion:14392] [warning] QString::arg: Argument missing: desktop=x86_64 cpu=x86_64 rosetta=0 osimages=x86,x86_64 osname=Windows osversion=Pro, 11.0.0
+2025-11-12T22:50:27.763 [Genymotion:14392] [debug] Architecture: "desktop=x86_64 cpu=x86_64 rosetta=0 osimages=x86,x86_64 osname=Windows osversion=Pro"
+2025-11-12T22:50:27.763 [Genymotion:14392] [debug] "Local socket created at path: \\\\.\\pipe\\907f397a1f5a71abaaa526042f58a1b0"
+2025-11-12T22:50:27.763 [Genymotion:14392] [debug] No proxy set
+2025-11-12T22:50:27.776 [Genymotion:14392] [debug] Host date and time: "13 Nov 2025 00:50:27 +0200"
+2025-11-12T22:50:27.778 [Genymotion:14392] [warning] License validity reaches the minimum acceptable value.
+2025-11-12T22:50:27.778 [Genymotion:14392] [warning] License validity reaches the minimum acceptable value.
+2025-11-12T22:50:27.787 [Genymotion:14392] [debug] Execute "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" ("-WindowStyle", "Hidden", "-Command", "Get-CimInstance -ClassName Win32_ComputerSystemProduct | Select-Object -Property UUID")
+2025-11-12T22:50:29.921 [Genymotion:14392] [warning] QProcess: Destroyed while process ("C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe") is still running.
+2025-11-12T22:50:29.941 [Genymotion:14392] [warning] Failed to fetch device uuid: "Failed to identify computer"
+2025-11-12T22:50:29.941 [Genymotion:14392] [debug] Fallback to locally generated device uuid
+2025-11-12T22:50:29.945 [Genymotion:14392] [debug] Theme assetsUrl "qrc:/themes/default"
+2025-11-12T22:50:30.055 [Genymotion:14392] [debug] [LaunchpadApp] Started with ("C:\\Program Files\\Genymobile\\Genymotion\\genymotion.exe")
+2025-11-12T22:50:30.055 [Genymotion:14392] [debug] GET "https://www.genymotion.com/rss/"
+2025-11-12T22:50:30.060 [Genymotion:14392] [debug] Trying to log in as "sandboxqa11@gmail.com"
+2025-11-12T22:50:30.060 [Genymotion:14392] [debug] POST "https://cloud.genymotion.com/launchpad/login/"
+2025-11-12T22:50:30.203 [Genymotion:14392] [debug] GL_VENDOR: "Intel"
+2025-11-12T22:50:30.203 [Genymotion:14392] [debug] GL_RENDERER: "Intel(R) Iris(R) Xe Graphics"
+2025-11-12T22:50:30.203 [Genymotion:14392] [debug] GL_VERSION: "4.6.0 - Build 32.0.101.7080"
+2025-11-12T22:50:30.203 [Genymotion:14392] [debug] GL_SHADING_LANGUAGE_VERSION: "4.60 - Build 32.0.101.7080"
+2025-11-12T22:50:31.084 [Genymotion:14392] [debug] [VMTools] Loading "virtualbox" plugin
+2025-11-12T22:50:31.086 [Genymotion:14392] [debug] [VMTools] Constructing engine
+2025-11-12T22:50:31.086 [Genymotion:14392] [debug] [VMTools] Chipset: "GenuineIntel"
+2025-11-12T22:50:31.086 [Genymotion:14392] [debug] [VMTools] CPUID 0x1 (Intel): ECX= "7ffafbff"
+2025-11-12T22:50:31.087 [Genymotion:14392] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T22:50:31.089 [Genymotion:14392] [debug] [VMTools] Path: "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe"
+2025-11-12T22:50:31.089 [Genymotion:14392] [debug] [VMTools] Initializing engine
+2025-11-12T22:50:31.089 [Genymotion:14392] [debug] [VMTools] Call: ("--version")
+2025-11-12T22:50:31.110 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.110 [Genymotion:14392] [debug] [VMTools] VBox version string : "7.0.26r168464"
+2025-11-12T22:50:31.111 [Genymotion:14392] [debug] [VMTools] get "VirtualBox Host-Only Ethernet Adapter #2" from virtualbox.host_only_interface_name
+2025-11-12T22:50:31.111 [Genymotion:14392] [debug] [VMTools] [findHostOnlyInterface] Looking for compatible host-only interface
+2025-11-12T22:50:31.111 [Genymotion:14392] [debug] [VMTools] Call: ("list", "hostonlyifs")
+2025-11-12T22:50:31.204 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.205 [Genymotion:14392] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter" interface status ( QHostAddress("169.254.118.2") )
+2025-11-12T22:50:31.205 [Genymotion:14392] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter #2" interface status ( QHostAddress("192.168.6.2") )
+2025-11-12T22:50:31.315 [Genymotion:14392] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" Interface seems compatible
+2025-11-12T22:50:31.315 [Genymotion:14392] [debug] [VMTools] Call: ("list", "dhcpservers")
+2025-11-12T22:50:31.341 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.341 [Genymotion:14392] [debug] [VMTools] "HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2" DHCP server is associated with "VirtualBox Host-Only Ethernet Adapter #2" interface
+2025-11-12T22:50:31.341 [Genymotion:14392] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" interface is compatible
+2025-11-12T22:50:31.341 [Genymotion:14392] [debug] [VMTools] VMX/SVM CPU availability: true
+2025-11-12T22:50:31.341 [Genymotion:14392] [debug] [VMTools] VM engine version: "7.0.26r168464"
+2025-11-12T22:50:31.343 [Genymotion:14392] [debug] [VMTools] Call: ("list", "bridgedifs")
+2025-11-12T22:50:31.386 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.389 [Genymotion:14392] [debug] [VMTools] Call: ("list", "vms")
+2025-11-12T22:50:31.416 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.416 [Genymotion:14392] [debug] [VMTools] Call: ("guestproperty", "enumerate", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:31.443 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.444 [Genymotion:14392] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:31.479 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.479 [Genymotion:14392] [debug] [VMTools] Call: ("showvminfo", "Google Nexus 4")
+2025-11-12T22:50:31.516 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:31.622 [Genymotion:14392] [warning] ADB not found: ("/platform-tools", "/tools", "")
+2025-11-12T22:50:31.622 [Genymotion:14392] [warning] SDK AAPT not found in ("/platform-tools", "/tools", "")
+2025-11-12T22:50:32.395 [Genymotion:14392] [debug] "User sandboxqa11@gmail.com logged on Hub"
+2025-11-12T22:50:32.398 [Genymotion:14392] [debug] GET "https://cloud.genymotion.com/launchpad/last_version/windows/x64/"
+2025-11-12T22:50:32.586 [Genymotion:14392] [debug] Genymotion is up-to-date
+2025-11-12T22:50:32.587 [Genymotion:14392] [debug] POST "https://cloud.genymotion.com/licenses/activation/"
+2025-11-12T22:50:32.834 [Genymotion:14392] [warning] HTTP response is an error
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] HTTP status code: 403, from cache: 0
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] HTTP headers:
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - Date: Wed, 12 Nov 2025 22:50:33 GMT
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - Content-Type: application/json;charset=utf-8
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - Transfer-Encoding: chunked
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - Connection: keep-alive
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - Content-Encoding: gzip
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - vary: Cookie
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - x-frame-options: DENY
+2025-11-12T22:50:32.834 [Genymotion:14392] [debug] - x-xss-protection: 1; mode=block
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - set-cookie: genymotion_sessionid=2d05d8e250b757bdcd607a7e7ef2b4d7; Domain=.genymotion.com; expires=Fri, 14-Nov-2025 22:50:33 GMT; httponly; Max-Age=172800; Path=/; secure
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - access-control-allow-methods: GET, POST, OPTIONS
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - access-control-allow-headers: accept, content-type, X-Requested-With, X-CSRFToken
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - referrer-policy: strict-origin-when-cross-origin
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - cf-cache-status: DYNAMIC
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - Server: cloudflare
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] - CF-RAY: 99d996c8ecfdd0da-SOF
+2025-11-12T22:50:32.835 [Genymotion:14392] [debug] HTTP content (first 127 bytes): {"code": 1000, "desc": "Activation failed: license have never been registered"}
+2025-11-12T22:50:32.835 [Genymotion:14392] [warning] [tokenError] AbstractAuthService::Error::NotRegistered "HTTP code 403: Activation failed: license have never been registered Error transferring https://cloud.genymotion.com/licenses/activation/ - server replied: FORBIDDEN."
+2025-11-12T22:50:32.835 [Genymotion:14392] [warning] License validity reaches the minimum acceptable value.
+2025-11-12T22:50:33.916 [Genymotion:14392] [debug] Starting device "7976a64b-9121-49ef-bdaa-cda863df173c" AbstractDeviceListController::DeviceUpdatePolicy::REQUIRED_UPDATE
+2025-11-12T22:50:33.916 [Genymotion:14392] [info] setDeviceStatus "7976a64b-9121-49ef-bdaa-cda863df173c" DeviceListModel::Status::BOOTING
+2025-11-12T22:50:33.918 [Genymotion:14392] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:33.962 [Genymotion:14392] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:33.962 [Genymotion:14392] [warning] Device "Google Nexus 4" is already running, connecting to it
+2025-11-12T22:50:33.963 [Genymotion:14392] [debug] Device is up to date
+2025-11-12T22:50:36.333 [Genymotion:14392] [debug] Received remote message QMap(("endpoint", QVariant(QString, "setDeviceStatus"))("status", QVariant(QString, "BOOTING"))("uuid", QVariant(QString, "7976a64b-9121-49ef-bdaa-cda863df173c")))
+2025-11-12T22:50:36.334 [Genymotion:14392] [info] setDeviceStatus "7976a64b-9121-49ef-bdaa-cda863df173c" DeviceListModel::Status::BOOTING
+2025-11-12T22:51:09.428 [Genymotion:14392] [debug] Received remote message QMap(("endpoint", QVariant(QString, "setDeviceStatus"))("status", QVariant(QString, "ON"))("uuid", QVariant(QString, "7976a64b-9121-49ef-bdaa-cda863df173c")))
+2025-11-12T22:51:09.428 [Genymotion:14392] [info] setDeviceStatus "7976a64b-9121-49ef-bdaa-cda863df173c" DeviceListModel::Status::ON
+2025-11-12T22:59:36.268 [Genymotion:14392] [debug] Received remote message QMap(("endpoint", QVariant(QString, "setDeviceStatus"))("status", QVariant(QString, "OFF"))("uuid", QVariant(QString, "7976a64b-9121-49ef-bdaa-cda863df173c")))
+2025-11-12T22:59:36.270 [Genymotion:14392] [info] setDeviceStatus "7976a64b-9121-49ef-bdaa-cda863df173c" DeviceListModel::Status::OFF
+2025-11-12T23:06:27.811 [Genymotion:14392] [debug] [mt] Syncing...
+2025-11-12T23:06:27.814 [Genymotion:14392] [debug] POST "https:"
+2025-11-12T23:06:28.022 [Genymotion:14392] [warning] [mt][amp] Send request succeeded
+2025-11-12T23:06:28.027 [Genymotion:14392] [debug] [mt] Syncing finished
+2025-11-12T23:06:28.203 [Genymotion:14392] [debug] ==== STOPPING GENYMOTION ====
+2025-11-12T23:06:28.203 [Genymotion:14392] [debug] Exit status: 0 Launchpad::ExitCode::SUCCESS
+motion Player:12144] [debug] [VMTools] VBox version string : "7.0.26r168464"
+2025-11-12T22:50:34.026 [Genymotion Player:12144] [debug] [VMTools] get "VirtualBox Host-Only Ethernet Adapter #2" from virtualbox.host_only_interface_name
+2025-11-12T22:50:34.026 [Genymotion Player:12144] [debug] [VMTools] [findHostOnlyInterface] Looking for compatible host-only interface
+2025-11-12T22:50:34.026 [Genymotion Player:12144] [debug] [VMTools] Call: ("list", "hostonlyifs")
+2025-11-12T22:50:34.072 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:34.072 [Genymotion Player:12144] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter" interface status ( QHostAddress("169.254.118.2") )
+2025-11-12T22:50:34.072 [Genymotion Player:12144] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter #2" interface status ( QHostAddress("192.168.6.2") )
+2025-11-12T22:50:34.184 [Genymotion Player:12144] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" Interface seems compatible
+2025-11-12T22:50:34.185 [Genymotion Player:12144] [debug] [VMTools] Call: ("list", "dhcpservers")
+2025-11-12T22:50:34.209 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:34.209 [Genymotion Player:12144] [debug] [VMTools] "HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2" DHCP server is associated with "VirtualBox Host-Only Ethernet Adapter #2" interface
+2025-11-12T22:50:34.209 [Genymotion Player:12144] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" interface is compatible
+2025-11-12T22:50:34.209 [Genymotion Player:12144] [debug] [VMTools] VMX/SVM CPU availability: true
+2025-11-12T22:50:34.209 [Genymotion Player:12144] [debug] [VMTools] VM engine version: "7.0.26r168464"
+2025-11-12T22:50:34.213 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:34.249 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:34.249 [Genymotion Player:12144] [debug] [VMTools] Call: ("guestproperty", "enumerate", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:34.276 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T22:50:34.276 [Genymotion Player:12144] [debug] [VMTools] Call: ("showvminfo", "--machinereadable", "7976a64b-9121-49ef-bdaa-cda863df173c")
+2025-11-12T22:50:34.311 [Genymotion Player:12144] [debug] [VMTools] Return code: 0
+2025-11-12T23:21:43.496 [Genymotion Player:3128] [debug] ==== STARTING PLAYER (pre-start) ====
+2025-11-12T23:21:43.496 [Genymotion Player:3128] [debug] Player version: "3.9.0" 20250507-527a21e90c
+2025-11-12T23:21:43.496 [Genymotion Player:3128] [debug] args: ("C:\\Program Files\\Genymobile\\Genymotion\\player", "--vm-name", "Phone")
+2025-11-12T23:21:43.523 [Genymotion Player:3128] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:21:43.567 [Genymotion Player:3128] [debug] Theme assetsUrl "qrc:/themes/default"
+2025-11-12T23:21:43.586 [Genymotion Player:3128] [debug] [VMTools] Loading "virtualbox" plugin
+2025-11-12T23:21:43.608 [Genymotion Player:3128] [debug] [VMTools] Constructing engine
+2025-11-12T23:21:43.608 [Genymotion Player:3128] [debug] [VMTools] Chipset: "GenuineIntel"
+2025-11-12T23:21:43.608 [Genymotion Player:3128] [debug] [VMTools] CPUID 0x1 (Intel): ECX= "7ffafbff"
+2025-11-12T23:21:43.609 [Genymotion Player:3128] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:21:43.613 [Genymotion Player:3128] [debug] [VMTools] Path: "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe"
+2025-11-12T23:21:43.613 [Genymotion Player:3128] [debug] [VMTools] Initializing engine
+2025-11-12T23:21:43.613 [Genymotion Player:3128] [debug] [VMTools] Call: ("--version")
+2025-11-12T23:21:43.634 [Genymotion Player:3128] [debug] [VMTools] Return code: 0
+2025-11-12T23:21:43.634 [Genymotion Player:3128] [debug] [VMTools] VBox version string : "7.0.26r168464"
+2025-11-12T23:21:43.634 [Genymotion Player:3128] [debug] [VMTools] get "VirtualBox Host-Only Ethernet Adapter #2" from virtualbox.host_only_interface_name
+2025-11-12T23:21:43.634 [Genymotion Player:3128] [debug] [VMTools] [findHostOnlyInterface] Looking for compatible host-only interface
+2025-11-12T23:21:43.635 [Genymotion Player:3128] [debug] [VMTools] Call: ("list", "hostonlyifs")
+2025-11-12T23:21:44.250 [Genymotion Player:3128] [debug] [VMTools] Return code: 0
+2025-11-12T23:21:44.250 [Genymotion Player:3128] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter" interface status ( QHostAddress("169.254.118.2") )
+2025-11-12T23:21:44.250 [Genymotion Player:3128] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter #2" interface status ( QHostAddress("192.168.6.2") )
+2025-11-12T23:21:44.411 [Genymotion Player:3128] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" Interface seems compatible
+2025-11-12T23:21:44.411 [Genymotion Player:3128] [debug] [VMTools] Call: ("list", "dhcpservers")
+2025-11-12T23:21:44.441 [Genymotion Player:3128] [debug] [VMTools] Return code: 0
+2025-11-12T23:21:44.442 [Genymotion Player:3128] [debug] [VMTools] "HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2" DHCP server is associated with "VirtualBox Host-Only Ethernet Adapter #2" interface
+2025-11-12T23:21:44.442 [Genymotion Player:3128] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" interface is compatible
+2025-11-12T23:21:44.442 [Genymotion Player:3128] [debug] [VMTools] VMX/SVM CPU availability: true
+2025-11-12T23:21:44.442 [Genymotion Player:3128] [debug] [VMTools] VM engine version: "7.0.26r168464"
+2025-11-12T23:21:44.445 [Genymotion Player:3128] [debug] [VMTools] Call: ("showvminfo", "Phone")
+2025-11-12T23:21:44.475 [Genymotion Player:3128] [critical] [VMTools] Return code: 1
+2025-11-12T23:21:44.475 [Genymotion Player:3128] [critical] [VMTools] Output command: "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp"
+2025-11-12T23:21:44.475 [Genymotion Player:3128] [warning] [VMTools] 1 "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp\r\n" ""
+2025-11-12T23:22:10.854 [Genymotion Player:3128] [debug] ==== STOPPING PLAYER ====
+2025-11-12T23:22:10.854 [Genymotion Player:3128] [debug] Exit status: 4 PlayerNS::ExitCode::NO_SUCH_MACHINE
+2025-11-12T23:24:08.416 [Genymotion Player:11064] [debug] ==== STARTING PLAYER (pre-start) ====
+2025-11-12T23:24:08.416 [Genymotion Player:11064] [debug] Player version: "3.9.0" 20250507-527a21e90c
+2025-11-12T23:24:08.416 [Genymotion Player:11064] [debug] args: ("C:\\Program Files\\Genymobile\\Genymotion\\player", "--vm-name", "Phone")
+2025-11-12T23:24:08.417 [Genymotion Player:11064] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:24:08.424 [Genymotion Player:11064] [debug] Theme assetsUrl "qrc:/themes/default"
+2025-11-12T23:24:08.438 [Genymotion Player:11064] [debug] [VMTools] Loading "virtualbox" plugin
+2025-11-12T23:24:08.439 [Genymotion Player:11064] [debug] [VMTools] Constructing engine
+2025-11-12T23:24:08.439 [Genymotion Player:11064] [debug] [VMTools] Chipset: "GenuineIntel"
+2025-11-12T23:24:08.439 [Genymotion Player:11064] [debug] [VMTools] CPUID 0x1 (Intel): ECX= "7ffafbff"
+2025-11-12T23:24:08.439 [Genymotion Player:11064] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:24:08.442 [Genymotion Player:11064] [debug] [VMTools] Path: "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe"
+2025-11-12T23:24:08.442 [Genymotion Player:11064] [debug] [VMTools] Initializing engine
+2025-11-12T23:24:08.442 [Genymotion Player:11064] [debug] [VMTools] Call: ("--version")
+2025-11-12T23:24:08.462 [Genymotion Player:11064] [debug] [VMTools] Return code: 0
+2025-11-12T23:24:08.462 [Genymotion Player:11064] [debug] [VMTools] VBox version string : "7.0.26r168464"
+2025-11-12T23:24:08.462 [Genymotion Player:11064] [debug] [VMTools] get "VirtualBox Host-Only Ethernet Adapter #2" from virtualbox.host_only_interface_name
+2025-11-12T23:24:08.462 [Genymotion Player:11064] [debug] [VMTools] [findHostOnlyInterface] Looking for compatible host-only interface
+2025-11-12T23:24:08.462 [Genymotion Player:11064] [debug] [VMTools] Call: ("list", "hostonlyifs")
+2025-11-12T23:24:08.970 [Genymotion Player:11064] [debug] [VMTools] Return code: 0
+2025-11-12T23:24:08.970 [Genymotion Player:11064] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter" interface status ( QHostAddress("169.254.118.2") )
+2025-11-12T23:24:08.970 [Genymotion Player:11064] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter #2" interface status ( QHostAddress("192.168.6.2") )
+2025-11-12T23:24:09.076 [Genymotion Player:11064] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" Interface seems compatible
+2025-11-12T23:24:09.076 [Genymotion Player:11064] [debug] [VMTools] Call: ("list", "dhcpservers")
+2025-11-12T23:24:09.104 [Genymotion Player:11064] [debug] [VMTools] Return code: 0
+2025-11-12T23:24:09.104 [Genymotion Player:11064] [debug] [VMTools] "HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2" DHCP server is associated with "VirtualBox Host-Only Ethernet Adapter #2" interface
+2025-11-12T23:24:09.104 [Genymotion Player:11064] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" interface is compatible
+2025-11-12T23:24:09.104 [Genymotion Player:11064] [debug] [VMTools] VMX/SVM CPU availability: true
+2025-11-12T23:24:09.104 [Genymotion Player:11064] [debug] [VMTools] VM engine version: "7.0.26r168464"
+2025-11-12T23:24:09.107 [Genymotion Player:11064] [debug] [VMTools] Call: ("showvminfo", "Phone")
+2025-11-12T23:24:09.135 [Genymotion Player:11064] [critical] [VMTools] Return code: 1
+2025-11-12T23:24:09.135 [Genymotion Player:11064] [critical] [VMTools] Output command: "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp"
+2025-11-12T23:24:09.135 [Genymotion Player:11064] [warning] [VMTools] 1 "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp\r\n" ""
+2025-11-12T23:24:32.620 [Genymotion Player:11064] [debug] ==== STOPPING PLAYER ====
+2025-11-12T23:24:32.620 [Genymotion Player:11064] [debug] Exit status: 4 PlayerNS::ExitCode::NO_SUCH_MACHINE
+2025-11-12T23:26:40.962 [Genymotion Player:3920] [debug] ==== STARTING PLAYER (pre-start) ====
+2025-11-12T23:26:40.962 [Genymotion Player:3920] [debug] Player version: "3.9.0" 20250507-527a21e90c
+2025-11-12T23:26:40.962 [Genymotion Player:3920] [debug] args: ("C:\\Program Files\\Genymobile\\Genymotion\\player", "--vm-name", "Phone")
+2025-11-12T23:26:40.962 [Genymotion Player:3920] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:26:40.966 [Genymotion Player:3920] [debug] Theme assetsUrl "qrc:/themes/default"
+2025-11-12T23:26:40.982 [Genymotion Player:3920] [debug] [VMTools] Loading "virtualbox" plugin
+2025-11-12T23:26:40.982 [Genymotion Player:3920] [debug] [VMTools] Constructing engine
+2025-11-12T23:26:40.982 [Genymotion Player:3920] [debug] [VMTools] Chipset: "GenuineIntel"
+2025-11-12T23:26:40.982 [Genymotion Player:3920] [debug] [VMTools] CPUID 0x1 (Intel): ECX= "7ffafbff"
+2025-11-12T23:26:40.983 [Genymotion Player:3920] [debug] Persistent settings initialized "C:/ProgramData/Genymobile/Genymotion/genymotion.ini"
+2025-11-12T23:26:40.985 [Genymotion Player:3920] [debug] [VMTools] Path: "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe"
+2025-11-12T23:26:40.985 [Genymotion Player:3920] [debug] [VMTools] Initializing engine
+2025-11-12T23:26:40.985 [Genymotion Player:3920] [debug] [VMTools] Call: ("--version")
+2025-11-12T23:26:41.003 [Genymotion Player:3920] [debug] [VMTools] Return code: 0
+2025-11-12T23:26:41.003 [Genymotion Player:3920] [debug] [VMTools] VBox version string : "7.0.26r168464"
+2025-11-12T23:26:41.003 [Genymotion Player:3920] [debug] [VMTools] get "VirtualBox Host-Only Ethernet Adapter #2" from virtualbox.host_only_interface_name
+2025-11-12T23:26:41.003 [Genymotion Player:3920] [debug] [VMTools] [findHostOnlyInterface] Looking for compatible host-only interface
+2025-11-12T23:26:41.003 [Genymotion Player:3920] [debug] [VMTools] Call: ("list", "hostonlyifs")
+2025-11-12T23:26:41.437 [Genymotion Player:3920] [debug] [VMTools] Return code: 0
+2025-11-12T23:26:41.437 [Genymotion Player:3920] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter" interface status ( QHostAddress("169.254.118.2") )
+2025-11-12T23:26:41.437 [Genymotion Player:3920] [debug] [VMTools] Checking "VirtualBox Host-Only Ethernet Adapter #2" interface status ( QHostAddress("192.168.6.2") )
+2025-11-12T23:26:41.540 [Genymotion Player:3920] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" Interface seems compatible
+2025-11-12T23:26:41.540 [Genymotion Player:3920] [debug] [VMTools] Call: ("list", "dhcpservers")
+2025-11-12T23:26:41.567 [Genymotion Player:3920] [debug] [VMTools] Return code: 0
+2025-11-12T23:26:41.567 [Genymotion Player:3920] [debug] [VMTools] "HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter #2" DHCP server is associated with "VirtualBox Host-Only Ethernet Adapter #2" interface
+2025-11-12T23:26:41.567 [Genymotion Player:3920] [debug] [VMTools] "VirtualBox Host-Only Ethernet Adapter #2" interface is compatible
+2025-11-12T23:26:41.567 [Genymotion Player:3920] [debug] [VMTools] VMX/SVM CPU availability: true
+2025-11-12T23:26:41.567 [Genymotion Player:3920] [debug] [VMTools] VM engine version: "7.0.26r168464"
+2025-11-12T23:26:41.570 [Genymotion Player:3920] [debug] [VMTools] Call: ("showvminfo", "Phone")
+2025-11-12T23:26:41.595 [Genymotion Player:3920] [critical] [VMTools] Return code: 1
+2025-11-12T23:26:41.595 [Genymotion Player:3920] [critical] [VMTools] Output command: "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp"
+2025-11-12T23:26:41.595 [Genymotion Player:3920] [warning] [VMTools] 1 "VBoxManage.exe: error: Could not find a registered machine named 'Phone'\r\nVBoxManage.exe: error: Details: code VBOX_E_OBJECT_NOT_FOUND (0x80bb0001), component VirtualBoxWrap, interface IVirtualBox, callee IUnknown\r\nVBoxManage.exe: error: Context: \"FindMachine(Bstr(VMNameOrUuid).raw(), machine.asOutParam())\" at line 3139 of file VBoxManageInfo.cpp\r\n" ""
+2025-11-12T23:26:47.418 [Genymotion Player:3920] [debug] ==== STOPPING PLAYER ====
+2025-11-12T23:26:47.418 [Genymotion Player:3920] [debug] Exit status: 4 PlayerNS::ExitCode::NO_SUCH_MACHINE

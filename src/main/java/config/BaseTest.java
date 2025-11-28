@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static utils.Utilities.copyFile;
+
 @Slf4j
 public class BaseTest {
 
@@ -21,14 +23,13 @@ public class BaseTest {
     public  static final  String  root = System.getProperty("user.dir");
     public  static final  String  path = root + File.separator + "library-manager" + File.separator + "LibraryManager.bat";
 
-    protected static AppiumDriver  appiumDriver;
     public static Desktop   desktop;
     public static Constants constants = new Constants();
 
 
     @BeforeSuite
     @Parameters({"deviceName", "deviceUDID"})
-    public void readDevice(@Optional("Redmi_Note_9") String deviceName, @Optional("127.0.0.1:6555") String deviceUDID) throws InterruptedException, IOException {
+    public void readDevice(@Optional("Phone") String deviceName, @Optional("emulator-5554") String deviceUDID) throws InterruptedException, IOException {
         String name = System.getProperty("name");
         if (name != null) {
             constants.setDeviceName(name);
@@ -51,15 +52,12 @@ public class BaseTest {
 
     @AfterSuite(alwaysRun = true)
     public void tearDownReport() throws IOException {
-        SeleniumDriverManager.quitSeleniumDriver();
-        AndroidDriverManager.stopAndroidEmulator();
-        AndroidDriverManager.stopAppiumService();
-
         try {
             Files.createDirectories(Paths.get("test-output-archive"));
         } catch (Exception exception) {
             System.out.println("test-output-archive directory already exists");
         }
+
 
         String folder = "test-output";
         String file   = "test-output-archive/" + Utilities.getDate() + ".zip";

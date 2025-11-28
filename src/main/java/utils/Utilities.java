@@ -3,6 +3,7 @@ package utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import org.apache.commons.io.FileUtils;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -23,6 +24,18 @@ public class Utilities {
         // Pretty print на JSON
         String prettyJson = gson.toJson(object);
         return prettyJson;
+    }
+
+
+    public static void copyFile(String source, String destination) throws IOException {
+        File fromFile = new File(source);
+        File toFile = new File(destination);
+
+        FileUtils.copyFile(fromFile, toFile);
+
+        if (fromFile.exists()) {
+            fromFile.delete();
+        }
     }
 
 

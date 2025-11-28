@@ -4,8 +4,10 @@ package tests.mobile;
 import config.BaseTest;
 import config.drivers.AndroidDriverManager;
 import config.ExtentTestNGListener;
+import config.drivers.SeleniumDriverManager;
 import data.Constants;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -14,6 +16,8 @@ import utils.Calculations;
 
 import java.io.IOException;
 import java.text.ParseException;
+
+import static utils.Utilities.copyFile;
 
 
 @Listeners(ExtentTestNGListener.class)
@@ -26,13 +30,23 @@ public class IrishWildsMobileTest extends BaseTest {
 
     @BeforeClass
     public void init() throws InterruptedException, IOException, ParseException {
-        AndroidDriverManager.startAppiumService();
-        AndroidDriverManager.startAndroidEmulator();
+        AndroidDriverManager.startAppiumServer();
+     //   AndroidDriverManager.androidEmulator("start");
 
         gamePage = new IrishWildMobilePage(AndroidDriverManager.getDriver());
 
         constants = new Constants();
         constants.readTestData("TestData", 1);
+    }
+
+    @AfterClass
+    public void tearDown() throws IOException, InterruptedException {
+        AndroidDriverManager.androidEmulator("stop");
+        SeleniumDriverManager.quitSeleniumDriver();
+        AndroidDriverManager.stopAppiumServer();
+
+        copyFile("C:\\Users\\KamboJah\\AppData\\Local\\Genymobile\\genymotion.log", "test-output\\genymotion.log");
+        copyFile("C:\\Users\\KamboJah\\AppData\\Local\\Genymobile\\Genymotion\\deployed\\Google Nexus 4\\genymotion-player.log", "test-output\\genymotion-player.log");
     }
 
 

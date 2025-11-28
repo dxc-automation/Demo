@@ -29,10 +29,10 @@ public class IrishWildWebPage {
     private final By spinButton   = By.xpath("//button[@class='button button__rounded-xl arrows-spin-button']");
 
 
-    public IrishWildWebPage(WebDriver driver) {
-        this.seleniumDriver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        this.js = (JavascriptExecutor) driver;
+    public IrishWildWebPage(WebDriver seleniumDriver) {
+        this.seleniumDriver = seleniumDriver;
+        this.wait = new WebDriverWait(seleniumDriver, Duration.ofSeconds(30));
+        this.js = (JavascriptExecutor) seleniumDriver;
     }
 
 
