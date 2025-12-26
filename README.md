@@ -9,23 +9,20 @@ It integrates with **TestNG**, **Maven**, **ExtentReports**, and **Jenkins CI/CD
 
 The framework follows a layered architecture to separate concerns and improve reusability.
 
----
-
-
 ## 🛠️ Technology Stack
 
--[X] Apache Maven 3.11.0** - Build automation and dependency management
--[X] Java 21** - Modern Java features and performance improvements
--[X] Selenium WebDriver 4.15.0** - Latest browser automation capabilities
--[X] TestNG Framework 7.9.0** - Advanced testing framework with parallel execution
--[X] Rest Assured 5.3.2** - Powerful API testing library 
--[X] Apache POI 5.2.4** - Excel file handling for test data 
--[X] Chrome & Firefox** - Cross-browser testing support
--[X] MongoDB Driver 4.11.1** - Database connectivity
+* [X]  Apache Maven 3.11.0** - Build automation and dependency management
+* [X]  Java 21** - Modern Java features and performance improvements
+* [X]  Selenium WebDriver 4.15.0** - Latest browser automation capabilities
+* [X]  TestNG Framework 7.9.0** - Advanced testing framework with parallel execution
+* [X]  Rest Assured 5.3.2** - Powerful API testing library
+* [X]  Apache POI 5.2.4** - Excel file handling for test data
+* [X]  Chrome & Firefox** - Cross-browser testing support
+* [X]  MongoDB Driver 4.11.1** - Database connectivity
 
+</p>
 
 ---
-
 
 ## 🧩 Architecture & Modules
 
@@ -60,34 +57,34 @@ The framework follows a layered architecture to separate concerns and improve re
 
 ---
 
-
 ## 📁 Package Organization
+
 ```
 src/
 ├── main/java/
-│   ├── config/                            
+│   ├── config/                          
 │   │   ├── AndroidDriverManager.java   
 │   │   ├── BaseTest.java
 │   │   ├── ExtentManager.java
 │   │   ├── ExtentTestNGListener.java
 │   │   ├── SeleniumDriverManager.java
 │   │   └── WriterOutputStream
-│   ├── data/                           
+│   ├── data/                         
 │   │    ├── Constants.java
 │   │    ├── Endpoints.java
 │   │    └── TradingConstants.java
-│   ├── pages/                            
+│   ├── pages/                          
 │   │    ├── mobile/
 │   │    └── web/
-│   ├── scripts/                           
+│   ├── scripts/                         
 │   │    ├── api/
 │   │    └── web/
-│   └── utils/                            
+│   └── utils/                          
 │        ├── Calculations.java
 │        ├── Excel.java
 │        ├── Calculations.java
 │        └── Calculations.java
-│    
+│  
 └── test/java/
      └── tests
         ├── api/
@@ -96,7 +93,6 @@ src/
 ```
 
 ---
-
 
 ## ⚙️ Installation & Setup
 
