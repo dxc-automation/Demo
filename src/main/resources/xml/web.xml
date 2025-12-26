@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="API Test Suite">
+<suite name="API Test Suite" thread-count="1" parallel="false">
 
     <listeners>
         <listener class-name="config.ExtentTestNGListener"/>
@@ -11,6 +11,19 @@
             <class name="tests.web.RegistrationWebTest">
                 <methods>
                     <include name="testRegistrationFormSubmission"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Irish Wild">
+        <classes>
+            <class name="tests.web.IrishWildsWebTest">
+                <methods>
+                    <include name="balanceUpdateAfterSpin"/>
+                    <include name="balanceUpdateAfterWin"/>
+                    <include name="spinWithDecreasedStake"/>
+                    <include name="spinWithIncreasedStake"/>
+                    <include name="checkAmountsAfterRefresh"/>
                 </methods>
             </class>
         </classes>

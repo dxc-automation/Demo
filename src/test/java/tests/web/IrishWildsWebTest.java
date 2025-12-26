@@ -2,7 +2,7 @@
 package tests.web;
 
 import config.BaseTest;
-import config.drivers.SeleniumDriverManager;
+import config.SeleniumDriverManager;
 import config.ExtentTestNGListener;
 import data.Constants;
 import org.testng.Assert;
@@ -28,11 +28,6 @@ public class IrishWildsWebTest extends BaseTest {
 
         SeleniumDriverManager.setupSeleniumDriver("chrome");
         gamePage = new IrishWildWebPage(SeleniumDriverManager.getSeleniumDriver());
-    }
-
-    @AfterTest
-    public void teardown() {
-        SeleniumDriverManager.quitSeleniumDriver();
     }
 
 

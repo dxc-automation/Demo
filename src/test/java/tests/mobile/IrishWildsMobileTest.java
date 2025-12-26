@@ -2,9 +2,9 @@
 package tests.mobile;
 
 import config.BaseTest;
-import config.drivers.AndroidDriverManager;
+import config.AndroidDriverManager;
 import config.ExtentTestNGListener;
-import config.drivers.SeleniumDriverManager;
+import config.SeleniumDriverManager;
 import data.Constants;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

@@ -12,6 +12,21 @@ The framework follows a layered architecture to separate concerns and improve re
 ---
 
 
+## 🛠️ Technology Stack
+
+-[X] Apache Maven 3.11.0** - Build automation and dependency management
+-[X] Java 21** - Modern Java features and performance improvements
+-[X] Selenium WebDriver 4.15.0** - Latest browser automation capabilities
+-[X] TestNG Framework 7.9.0** - Advanced testing framework with parallel execution
+-[X] Rest Assured 5.3.2** - Powerful API testing library 
+-[X] Apache POI 5.2.4** - Excel file handling for test data 
+-[X] Chrome & Firefox** - Cross-browser testing support
+-[X] MongoDB Driver 4.11.1** - Database connectivity
+
+
+---
+
+
 ## 🧩 Architecture & Modules
 
 ### 1. Core
@@ -44,6 +59,44 @@ The framework follows a layered architecture to separate concerns and improve re
 - Data-driven reports (via Excel/CSV)
 
 ---
+
+
+## 📁 Package Organization
+```
+src/
+├── main/java/
+│   ├── config/                            
+│   │   ├── AndroidDriverManager.java   
+│   │   ├── BaseTest.java
+│   │   ├── ExtentManager.java
+│   │   ├── ExtentTestNGListener.java
+│   │   ├── SeleniumDriverManager.java
+│   │   └── WriterOutputStream
+│   ├── data/                           
+│   │    ├── Constants.java
+│   │    ├── Endpoints.java
+│   │    └── TradingConstants.java
+│   ├── pages/                            
+│   │    ├── mobile/
+│   │    └── web/
+│   ├── scripts/                           
+│   │    ├── api/
+│   │    └── web/
+│   └── utils/                            
+│        ├── Calculations.java
+│        ├── Excel.java
+│        ├── Calculations.java
+│        └── Calculations.java
+│    
+└── test/java/
+     └── tests
+        ├── api/
+        ├── web/
+        └── mobile/
+```
+
+---
+
 
 ## ⚙️ Installation & Setup
 

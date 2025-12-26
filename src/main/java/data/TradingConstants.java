@@ -1,8 +1,54 @@
 package data;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.Base64;
+
+import static utils.Excel.readFromExcel;
 
 public class TradingConstants {
+
+    //  ACCOUNTS
+    private String demoUsername;
+    private String demoPassword;
+
+
+    public void setDemoUsername(String demoUsername) {
+        this.demoUsername = demoUsername;
+    }
+
+    public String getDemoUsername() {
+        return demoUsername;
+    }
+
+    public void setDemoPassword(String demoPassword) {
+        this.demoPassword = demoPassword;
+    }
+
+    public String getDemoPassword() {
+        return demoPassword;
+    }
+
+    public String decode(String password) {
+        byte[] decodedBytes = Base64.getDecoder().decode(password);
+        String decodedString = new String(decodedBytes);
+        return decodedString;
+    }
+
+    public void readTradingAccounts() throws IOException, ParseException {
+        String encoded_password;
+        String decoded_password;
+
+        setDemoUsername(readFromExcel("Accounts", 2, 1).toString());
+        encoded_password = readFromExcel("Accounts", 2, 2).toString();
+        decoded_password = decode(encoded_password);
+        setDemoPassword(decoded_password);
+
+        System.out.println("\nTrading Username: " + getDemoUsername());
+    }
+
+
 
     //  TRADE
     private String nameFirstRow;

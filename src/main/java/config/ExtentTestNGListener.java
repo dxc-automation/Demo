@@ -3,8 +3,6 @@ package config;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import config.drivers.AndroidDriverManager;
-import config.drivers.SeleniumDriverManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,13 +14,13 @@ import java.io.PrintStream;
 import java.io.StringWriter;
 import java.util.Arrays;
 
-import static config.drivers.SeleniumDriverManager.getSeleniumDriver;
+import static config.SeleniumDriverManager.getSeleniumDriver;
 import static utils.ScreenshotUtil.takeScreenshot;
 
 public class ExtentTestNGListener implements ITestListener {
 
     private static ExtentReports extent = ExtentManager.getInstance();
-    private static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
+    protected static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
 
     public static StringWriter requestWriter = new StringWriter();
     public static PrintStream requestCapture = new PrintStream(new WriterOutputStream(requestWriter), false);
@@ -108,20 +106,6 @@ public class ExtentTestNGListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        testThread.get().assignCategory(testCategory);
-        switch (testCategory) {
-            case "API":
-                testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>" + getRequestLog() + "</br></pre>");
-                testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
-                break;
-            case "WEB", "MOBILE":
-                if (testCategory.equalsIgnoreCase("WEB")) {
-                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver())).build());
-                } else {
-                    testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(AndroidDriverManager.getDriver())).build());
-                }
-                break;
-        }
     }
 
     @Override

@@ -5,7 +5,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.ParseException;
 
 public class Excel {
@@ -48,5 +51,32 @@ public class Excel {
         System.out.println("\nReading......\nType: " + type + "\nHeader: " + headerValue + "\nValue: " + CellData + "\n");
 
         return CellData;
+    }
+
+    public static void writeToExcel(String sheetName, int rowNo, int colNo, Object value) throws IOException {
+        String excelFile = System.getProperty("user.dir") + "/src/main/resources/data.xlsx";
+        System.out.println("\nWriting......\nValue: " + value + "\n");
+
+        FileInputStream fileInputStream = new FileInputStream(excelFile);
+        Workbook workbook = WorkbookFactory.create(fileInputStream);
+        Sheet sheet = workbook.getSheet(sheetName);
+        Cell cellValue = sheet.getRow(rowNo).getCell(colNo);
+        cellValue.setCellValue(value.toString());
+        cellValue.setCellType(CellType.NUMERIC);
+
+        FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+        evaluator.evaluateAll();
+
+        FileOutputStream fileOutputStream = new FileOutputStream(excelFile);
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+        workbook.close();
+    }
+
+
+    public static BigDecimal convertDoubleToBigDecimal(Object value) {
+        double doubleValue = Double.valueOf(value.toString());
+        BigDecimal bigDecimal = new BigDecimal(doubleValue).setScale(2, RoundingMode.HALF_UP);
+        return bigDecimal;
     }
 }

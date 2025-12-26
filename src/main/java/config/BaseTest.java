@@ -1,11 +1,10 @@
 package config;
 
-import config.drivers.AndroidDriverManager;
-import config.drivers.SeleniumDriverManager;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import data.Constants;
-import io.appium.java_client.AppiumDriver;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.testng.ITestResult;
 import utils.Utilities;
 import org.testng.annotations.*;
 import java.awt.*;
@@ -14,7 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static utils.Utilities.copyFile;
+import static config.ExtentTestNGListener.*;
 
 @Slf4j
 public class BaseTest {
@@ -47,6 +46,32 @@ public class BaseTest {
             constants.setDeviceUDID(deviceUDID);
             System.out.println("Detected local device udid: " + constants.getDeviceUDID());
         }
+    }
+
+    @AfterMethod
+    public void report(ITestResult result) {
+        if (result.isSuccess()) {
+            testThread.get().assignCategory(testCategory);
+            switch (testCategory) {
+                case "API":
+                    testThread.get().info("<pre><center><b>* * * * * * * *    R E Q U E S T    * * * * * * * *</b></center></br></br>" + getRequestLog() + "</br></pre>");
+                    testThread.get().pass("<pre><center><b>* * * * * * * *    R E S P O N S E    * * * * * * * *</b></center></br></br>" + getResponseLog() + "</br></pre>");
+                    break;
+                case "WEB", "MOBILE":
+                    if (testCategory.equalsIgnoreCase("WEB")) {
+                        testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(SeleniumDriverManager.getSeleniumDriver())).build());
+                    } else {
+                        testThread.get().pass("<font color=" + "green>" + testDetails + "</font>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.captureScreenshot(AndroidDriverManager.getDriver())).build());
+                    }
+                    break;
+            }
+        }
+    }
+
+
+    @AfterTest
+    public void tearDown() throws IOException, InterruptedException {
+        SeleniumDriverManager.getSeleniumDriver().quit();
     }
 
 

@@ -1,6 +1,6 @@
 package pages.web;
 
-import config.drivers.SeleniumDriverManager;
+import config.SeleniumDriverManager;
 import data.Endpoints;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,7 +17,7 @@ public class IrishWildWebPage {
     private JavascriptExecutor js;
 
 
-    private final By autoButton   = By.xpath("//button[@class='button']");
+    private final By autoButton   = By.xpath("(//button[@class='button'])[1]");
     private final By playButton   = By.xpath("//button[@class='button button__slider-play button__rounded-xl _visible']");
     private final By balanceText  = By.xpath("(//span[@class='amount'])[1]");
     private final By lastWinText  = By.xpath("//div[@class='display win display__wrapper align-center _display-bg-black']//span[@class='amount'][1]");
@@ -42,9 +42,10 @@ public class IrishWildWebPage {
     }
 
 
-    public void refreshGamePage() {
+    public void refreshGamePage() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(autoButton));
         seleniumDriver.navigate().refresh();
+        Thread.sleep(1500);
         wait.until(ExpectedConditions.elementToBeClickable(playButton));
     }
 
@@ -52,7 +53,7 @@ public class IrishWildWebPage {
     public void clickPlayGame() {
         wait.until(ExpectedConditions.elementToBeClickable(playButton));
         seleniumDriver.findElement(playButton).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(balanceText));
+        wait.until(ExpectedConditions.elementToBeClickable(balanceText));
     }
 
 
